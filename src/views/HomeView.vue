@@ -69,7 +69,7 @@
         <p class="text-center  frase-home w-75 text-white " >La puerta al empoderamiento y el éxito se encuentra frente a ti.</p>
         <p class="text-center  frase-home w-75 text-white" >Prepárate para una travesía de descubrimiento y logros. </p>
         <br>
-        <v-btn class="text-none  text-h6 d-none d-md-flex  " color="info" variant="flat"> ¡Comienza ya! </v-btn>
+        <v-btn class="text-none  text-h6  " color="info" variant="flat"> ¡Comienza ya! </v-btn>
       </v-col>
     </v-row>
     
@@ -81,7 +81,7 @@
 
 <script>
 import { defineComponent } from 'vue';
-import style from '../assets/styles.css'
+//import style from '../assets/styles.css?inline'
 // Components
 
 export default defineComponent({
@@ -110,3 +110,24 @@ export default defineComponent({
     },
 });
 </script>
+
+<style scoped>
+.home-header{
+    background-color: #14385C;
+}
+
+.title-home{
+    font-size: clamp(3em,6vw,18em);
+    color: white;
+}
+
+.subtitle-home{
+    font-size: clamp(3em,6vw,18em);
+    color: #6BACE4;
+}
+.frase-home{
+    font-size: clamp(1em,1.2vw,5em);
+    font-weight: normal;
+}
+
+</style>
