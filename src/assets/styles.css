@@ -1,0 +1,17 @@
+.home-header{
+    background-color: #14385C;
+}
+
+.title-home{
+    font-size: clamp(3em,6vw,18em);
+    color: white;
+}
+
+.subtitle-home{
+    font-size: clamp(3em,6vw,18em);
+    color: #6BACE4;
+}
+.frase-home{
+    font-size: clamp(1em,1.2vw,5em);
+    font-weight: normal;
+}
