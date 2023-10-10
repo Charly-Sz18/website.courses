@@ -71,10 +71,158 @@
         <br>
         <v-btn class="text-none  text-h6  " color="info" variant="flat"> ¡Comienza ya! </v-btn>
       </v-col>
-    </v-row>
-    
+    </v-row>  
+  </v-container>
+  <v-container fluid >
+    <v-row no-gutters>
+      <v-col  class="v-col-lg-12  d-flex flex-column align-center" >
+        <h2 class=" text-center mt-7">
+         Toma el control de tu carrera
+        </h2>
+        <br>
+        <p class=" text-center mt-4 mb-5"  >
+         Domine las necesidades que necesita para conseguir el trabajo que desea y sobresalga cuando lo consiga
+        </p>
+        <br>
+          <div class="d-flex justify-center mt-4">
+            <!-- Tarjeta izquierda -->
+            <v-card class="mr-4 mb-12 elevation-4 rounded rounded-lg"  width="300">
+              <v-card-title>Aprende 
+                <br> a codificar
+              </v-card-title>
+              <v-card-text>
+                <v-img 
+                src=""
+                alt="si">
+                </v-img>
+              </v-card-text>
+            </v-card>
+
+            <!-- Tarjeta centrada -->
+            <v-card class="mx-15 mb-12 elevation-4 rounded rounded-lg" width="300">
+              <v-card-title>Aprende nuevas
+                <br> tecnologías </v-card-title>
+              <v-card-text>
+                <v-img 
+                src=""
+                alt="si">
+                </v-img>
+              </v-card-text>
+            </v-card>
+
+            <!-- Tarjeta derecha -->
+            <v-card class="ml-4 mb-12 elevation-4 rounded rounded-lg" width="300">
+              <v-card-title>Preparate para 
+                <br> entrevistas
+                <br> técnicas</v-card-title>
+              <v-card-text>
+                <v-img 
+                src=""
+                alt="si">
+                </v-img>
+              </v-card-text>
+            </v-card>
+          </div>
+        <br>
+      </v-col>
+    </v-row>  
   </v-container>
 
+  <v-container fluid class="seccion">
+    <v-row no-gutters> 
+      <v-col class="v-col-lg-12  d-flex flex-column align-center">
+        <h1 class="mt-5"> Temas populares</h1>
+        <p class="mt-5 mb-7" > Aprende con nosotros las tecnologías mas demandadas en la industria</p>
+        <div class="d-flex justify-center mt-4 mb-7">
+          <v-avatar color="yellow" size="large" class="mr-3">
+            <span class="text-h5"> JS</span>
+          </v-avatar>
+          <v-avatar color="#14354C" size="large" class="mr-3">
+            <span class="text-h5"> P</span>
+          </v-avatar>
+          <v-avatar color="#400f87" size="large" class="mr-3">
+            <span class="text-h5"> C#</span>
+          </v-avatar>
+          <v-avatar color="white" size="large" class="mr-3">
+            <span class="text-h5"> FR</span>
+          </v-avatar>
+          <v-avatar color="#1E5B85" size="large" class="mr-3">
+            <span class="text-h5"> V</span>
+          </v-avatar>
+          <v-avatar color="black" size="large" class="mr-3">
+            <span class="text-h5"> R</span>
+          </v-avatar>
+        </div>
+      </v-col>
+    </v-row>
+  </v-container >
+  
+  <v-container fluid >
+    <v-row no-gutters>
+      <v-col  class="v-col-lg-12  d-flex flex-column align-center" >
+        <h1 class=" text-center mt-7 mb-4">
+         Opiniones de nuestros <span class="estudiantes"> estudiantes </span>
+        </h1>
+          <div class="d-flex justify-center mt-4">
+            <!-- Tarjeta izquierda -->
+            <v-card class="mr-4 mb-12 elevation-4 rounded rounded-lg"  width="300">
+              <v-card-title class="titulo mt-4"> "
+              </v-card-title>
+              <v-card-text>  
+                Nunca habia experimentado un aprendizaje tan flexible y efectivo.
+                Los cursos en linea me permitiweon continuar con mi educacion mientras mantenia mi trabajo a tiempo completo.
+                Gracias a esta plataforma ahora me siento más confiada y preparada para alcanzar mis metas profesionales
+              <v-divider class="mt-2 mb-2"></v-divider>
+              <v-avatar color="blue"> </v-avatar>
+              Ana López
+              </v-card-text>
+            </v-card>
+
+            <!-- Tarjeta centrada -->
+            <v-card class="mx-15 mb-12 elevation-4 rounded rounded-lg" width="300">
+              <v-card-title class="titulo mt-4">" </v-card-title>
+              <v-card-text>
+               Como un amante del aprendizaje constante, esta plataforma me ha dado acceso a un tesoro de conocimiento.
+               Los cursos son excelentes y los instructores son expertos en sus campos. Estoy emocionado de seguir
+               explorando nuevas áreas y expandiendo mis horizontes
+               <v-divider class="mt-4 mb-2"></v-divider>
+              <v-avatar color="blue"> </v-avatar>
+              Pedro Morales
+              </v-card-text>
+            </v-card>
+
+            <!-- Tarjeta derecha -->
+            <v-card class="ml-4 mb-12 elevation-4 rounded rounded-lg" width="300">
+              <v-card-title class="titulo mt-4">"</v-card-title>
+              <v-card-text>
+                ¡Estoy enganchada a esta plataforma! Cada curso es como un libro que no puedo dejar de leer. Me ha 
+                inspirado a explorar campos que nunca antes habia considerado. Es  un lugar donde el aprendizaje se convierte en una adicción saludable
+                <v-divider class="mt-2 mb-2"></v-divider>
+                <v-avatar color="blue"> </v-avatar>
+                  Isabel Lagunez
+              </v-card-text>
+            </v-card>
+          </div>
+        <br>
+      </v-col>
+    </v-row>  
+  </v-container>
+
+
+  <v-container fluid class="secc">
+    <v-row no-gutters> 
+    <v-col class="v-col-lg-12  d-flex flex-column align-center">
+      <h1 class="mt-6"> No postergues más tu educación, ¡Tu futuro te esta esperando!</h1>
+      <p class="mt-6">Un nuevo empleo, mejor salario, mayor calidad de vida, ¡todo lo puedes conseguir con
+        <br> educación! Es el momento de lograr lo que siempre has querido.
+      </p>
+      <v-btn class="text-none  text-h6  mt-6 " color="info" variant="flat"> ¡Comienza ya! </v-btn>
+    </v-col>
+  </v-row>
+  </v-container>
+  <v-container fluid class="home-header" > 
+
+  </v-container>
 
   
 </template>
@@ -129,5 +277,22 @@ export default defineComponent({
     font-size: clamp(1em,1.2vw,5em);
     font-weight: normal;
 }
+.seccion{
+    background-color: #E1F4FF;
+}
+.secc{
+  background-color: #EFEFFA
+}
+.estudiantes{
+  color: #2F80ED;
+}
+.icon{
+  color: #6BACE4;
+}
+.titulo{
+  font-size:50px;
+  color: #6BACE4
+}
+
 
 </style>
