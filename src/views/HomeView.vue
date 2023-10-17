@@ -72,7 +72,7 @@
         <p class="text-center  frase-home w-75 text-white " >La puerta al empoderamiento y el éxito se encuentra frente a ti.</p>
         <p class="text-center  frase-home w-75 text-white" >Prepárate para una travesía de descubrimiento y logros. </p>
         <br>
-        <v-btn class="text-none  text-h6  " color="info" variant="flat"> ¡Comienza ya! </v-btn>
+        <v-btn class="text-none  text-h6  " color="info" variant="flat" @click="ShowDialogRegister"> ¡Comienza ya! </v-btn>
       </v-col>
     </v-row>  
   </v-container>
@@ -219,7 +219,7 @@
       <p class="mt-6">Un nuevo empleo, mejor salario, mayor calidad de vida, ¡todo lo puedes conseguir con
         <br> educación! Es el momento de lograr lo que siempre has querido.
       </p>
-      <v-btn class="text-none  text-h6  mt-6 " color="info" variant="flat" @click="ShowDialogEnter"> ¡Comienza ya! </v-btn>
+      <v-btn class="text-none  text-h6  mt-6 " color="info" variant="flat" @click="ShowDialogRegister"> ¡Comienza ya! </v-btn>
     </v-col>
   </v-row>
   </v-container>
@@ -275,7 +275,7 @@ export default defineComponent({
       },
       Asignarvalor(index){
         console.log(index)
-        
+        this.drawer=!this.drawer;
         if(index==='LogIn'){
           this.ShowDialogEnter()
         }else{
