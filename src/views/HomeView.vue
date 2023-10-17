@@ -10,35 +10,36 @@
       </v-app-bar-title>
       
 
-      <v-card-text  class="d-none d-md-flex">
+      <v-card-text  class="d-none d-md-flex" >
         <v-text-field
-          :loading="loading"
           density="compact"
           label="Search templates"
           append-inner-icon="mdi-magnify"
           single-line
-          hide-details
-          @click:append-inner="onClick"
-          
+          hide-details         
           >
         </v-text-field>
       </v-card-text>
 
 
       <v-divider
+      v-if="!drawer"
       class="ms-3 me-3 border-opacity-25 d-none d-md-flex"
       inset
       vertical>
       </v-divider>
      
-    
+      <v-btn class="text-h5 me-3 d-none d-md-flex"  variant="text" @click="ShowDialogEnter"> Iniciar sesión </v-btn>
+      <Login @OpenRegister="ShowDialogRegister" ref="login"/>
+      <v-btn class="text-none  text-h6 d-none d-md-flex  " color="info" variant="flat" @click="ShowDialogRegister"> ¡Comienza ya! </v-btn>
+      <Signup @OpenLogin="ShowDialogEnter" ref="signup"/>
       
-      <v-btn class="text-h5 me-3 d-none d-md-flex" variant="texto"> Iniciar sesión </v-btn>
-      <v-btn class="text-none  text-h6 d-none d-md-flex  " color="info" variant="flat"> ¡Comienza ya! </v-btn>
+      
      
       <v-app-bar-nav-icon 
           @click="drawer = !drawer" 
-          class="d-flex d-md-none">
+          class="d-flex d-md-none"
+          >
       </v-app-bar-nav-icon>
     </v-container>            
   </v-app-bar>
@@ -50,10 +51,12 @@
         class="d-flex d-lg-none"
         style="height: auto;"
         >
-        <v-list
-          :items="items"
-          @click="drawer = !drawer"
-        ></v-list>
+        
+        <v-list>
+          <v-list-item v-for="item,index in items" :key="index" @click="Asignarvalor(item.value)">
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
   </v-navigation-drawer>
 
   <v-container fluid class="home-header">
@@ -216,7 +219,7 @@
       <p class="mt-6">Un nuevo empleo, mejor salario, mayor calidad de vida, ¡todo lo puedes conseguir con
         <br> educación! Es el momento de lograr lo que siempre has querido.
       </p>
-      <v-btn class="text-none  text-h6  mt-6 " color="info" variant="flat"> ¡Comienza ya! </v-btn>
+      <v-btn class="text-none  text-h6  mt-6 " color="info" variant="flat" @click="ShowDialogEnter"> ¡Comienza ya! </v-btn>
     </v-col>
   </v-row>
   </v-container>
@@ -225,17 +228,25 @@
   </v-container>
 
   
+
+  
+
+  
 </template>
 
 <script>
+
 import { defineComponent } from 'vue';
+import Login from '@/components/Login.vue';
+import Signup from '@/components/Signup.vue';
 //import style from '../assets/styles.css?inline'
 // Components
 
 export default defineComponent({
   name: 'HomeView',
   components: {
-
+    Login,
+    Signup,
   },
   data: () => ({
     drawer: false,
@@ -254,8 +265,29 @@ export default defineComponent({
     }),
 
     methods: {
-     
+      ShowDialogEnter(){
+        console.log("entra",this.$refs.login)
+        this.$refs.login.dialog=true;
+      },
+      ShowDialogRegister(){
+        console.log("entra",this.$refs.login)
+        this.$refs.signup.dialog=true;
+      },
+      Asignarvalor(index){
+        console.log(index)
+        
+        if(index==='LogIn'){
+          this.ShowDialogEnter()
+        }else{
+          this.ShowDialogRegister()
+        }
+        
+      }
+    
     },
+    computed:{
+      
+    }
 });
 </script>
 
