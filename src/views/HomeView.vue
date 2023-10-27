@@ -2,15 +2,13 @@
   <v-app-bar density="prominent" color="#14385C" flat>
     <v-container fluid class="d-flex justify-center align-center h-100" style="width: 95%; " >
       <v-avatar  size="80" class="me-3">
-          <img src="../assets/Logo/Logo.png" style="width: 100%;"/>
+        <img src="../assets/Logo/Logo.png" style="width: 100%;"/>
       </v-avatar>
       
       <v-app-bar-title class="d-flex align-center h-100" >
-          GRUPO GEEC 
+        GRUPO GEEC 
       </v-app-bar-title>
-      
-
-      <v-card-text  class="d-none d-md-flex">
+      <v-card-text  class="d-none d-md-flex" >
         <v-text-field
           :loading="loading"
           density="compact"
@@ -23,19 +21,15 @@
           >
         </v-text-field>
       </v-card-text>
-
-
       <v-divider
       class="ms-3 me-3 border-opacity-25 d-none d-md-flex"
       inset
       vertical>
       </v-divider>
-     
-    
-      
-      <v-btn class="text-h5 me-3 d-none d-md-flex" variant="texto"> Iniciar sesión </v-btn>
-      <v-btn class="text-none  text-h6 d-none d-md-flex  " color="info" variant="flat"> ¡Comienza ya! </v-btn>
-     
+      <v-btn class="text-h5 me-3 d-none d-md-flex"  variant="text" @click="ShowDialogEnter"> Iniciar sesión </v-btn>
+      <Login @OpenRegister="ShowDialogRegister" ref="login"/>
+      <v-btn class="text-none  text-h6 d-none d-md-flex  " color="info" variant="flat" @click="ShowDialogRegister"> ¡Comienza ya! </v-btn>
+      <Signup @OpenLogin="ShowDialogEnter" ref="signup"/>
       <v-app-bar-nav-icon 
           @click="drawer = !drawer" 
           class="d-flex d-md-none">
@@ -50,10 +44,11 @@
         class="d-flex d-lg-none"
         style="height: auto;"
         >
-        <v-list
-          :items="items"
-          @click="drawer = !drawer"
-        ></v-list>
+    <v-list>
+      <v-list-item v-for="item,index in items" :key="index" @click="Asignarvalor(item.value)">
+        <v-list-item-title>{{ item.title }}</v-list-item-title>
+      </v-list-item>
+    </v-list>
   </v-navigation-drawer>
 
   <v-container fluid class="home-header">
@@ -83,45 +78,51 @@
         <p class=" text-center mt-4 mb-5"  >
          Domine las necesidades que necesita para conseguir el trabajo que desea y sobresalga cuando lo consiga
         </p>
-        <br>
-          <div class="d-flex justify-center mt-4">
+         <div class="d-flex justify-center mt-4">
             <!-- Tarjeta izquierda -->
+           <v-col class="mb-4 mx-7" xs12 sm6 md4>
             <v-card class="mr-4 mb-12 elevation-4 rounded rounded-lg"  width="300">
               <v-card-title>Aprende 
                 <br> a codificar
               </v-card-title>
               <v-card-text>
-                <v-img 
-                src=""
-                alt="si">
-                </v-img>
+              <div class="text-right">
+              <v-avatar rounded="0" size="x-large" class="ms-5 mt" >
+                <img src="../assets/ImagenesHome/codigo.png" style="width: 100%; "/>
+              </v-avatar> 
+            </div>
               </v-card-text>
             </v-card>
+        </v-col>
 
             <!-- Tarjeta centrada -->
-            <v-card class="mx-15 mb-12 elevation-4 rounded rounded-lg" width="300">
+           <v-col class="mb-4 mx-7" xs12 sm6 md4>
+            <v-card class="elevation-4 rounded rounded-lg" width="300">
               <v-card-title>Aprende nuevas
                 <br> tecnologías </v-card-title>
               <v-card-text>
-                <v-img 
-                src=""
-                alt="si">
-                </v-img>
+                <div class="text-right">
+              <v-avatar rounded="0" size="x-large" class="ms-5 mt" >
+                <img src="../assets/ImagenesHome/bombilla.png" style="width: 100%; "/>
+              </v-avatar>
+             </div>
               </v-card-text>
             </v-card>
+            </v-col>  
 
             <!-- Tarjeta derecha -->
-            <v-card class="ml-4 mb-12 elevation-4 rounded rounded-lg" width="300">
-              <v-card-title>Preparate para 
-                <br> entrevistas
-                <br> técnicas</v-card-title>
+            <v-col class=" mx-7 mb-4" xs12 sm6 md4>
+            <v-card class="elevation-4 rounded rounded-lg" width="300">
+              <v-card-title>Preparate para <br> entrevistas técnicas</v-card-title>
               <v-card-text>
-                <v-img 
-                src=""
-                alt="si">
-                </v-img>
+                <div class="text-right">
+              <v-avatar rounded="0"  size="x-large" class="ms-5 mt" >
+                <img src="../assets/ImagenesHome/charlando.png" style="width: 100%; "/>
+              </v-avatar> 
+            </div>
               </v-card-text>
             </v-card>
+            </v-col> 
           </div>
         <br>
       </v-col>
@@ -133,24 +134,27 @@
       <v-col class="v-col-lg-12  d-flex flex-column align-center">
         <h1 class="mt-5"> Temas populares</h1>
         <p class="mt-5 mb-7" > Aprende con nosotros las tecnologías mas demandadas en la industria</p>
+
         <div class="d-flex justify-center mt-4 mb-7">
           <v-avatar color="yellow" size="large" class="mr-3">
-            <span class="text-h5"> JS</span>
+            <img src="../assets/ImagenesHome/js.png" style="width: 50%; "/>
           </v-avatar>
           <v-avatar color="#14354C" size="large" class="mr-3">
-            <span class="text-h5"> P</span>
+            <img src="../assets/ImagenesHome/piton.png" style="width: 50%; "/>
           </v-avatar>
           <v-avatar color="#400f87" size="large" class="mr-3">
-            <span class="text-h5"> C#</span>
+            <img src="../assets/ImagenesHome/c.svg" style="width: 50%; "/>
           </v-avatar>
           <v-avatar color="white" size="large" class="mr-3">
-            <span class="text-h5"> FR</span>
+            <img src="../assets/ImagenesHome/flutter.png" style="width: 50%; "/>
+
           </v-avatar>
           <v-avatar color="#1E5B85" size="large" class="mr-3">
-            <span class="text-h5"> V</span>
+            <img src="../assets/ImagenesHome/vue.png" style="width: 50%; "/>
           </v-avatar>
           <v-avatar color="black" size="large" class="mr-3">
-            <span class="text-h5"> R</span>
+            <img src="../assets/ImagenesHome/React-icon.svg.png" style="width: 50%; "/>
+
           </v-avatar>
         </div>
       </v-col>
