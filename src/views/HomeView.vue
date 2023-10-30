@@ -88,7 +88,7 @@
               <v-card-text>
               <div class="text-right">
               <v-avatar rounded="0" size="x-large" class="ms-5 mt" >
-                <img src="../assets/ImagenesHome/codigo.png" style="width: 100%; "/>
+                <img src="../assets/ImagenesHome/code.png" style="width: 100%; "/>
               </v-avatar> 
             </div>
               </v-card-text>
@@ -103,7 +103,7 @@
               <v-card-text>
                 <div class="text-right">
               <v-avatar rounded="0" size="x-large" class="ms-5 mt" >
-                <img src="../assets/ImagenesHome/bombilla.png" style="width: 100%; "/>
+                <img src="../assets/ImagenesHome/learning.png" style="width: 100%; "/>
               </v-avatar>
              </div>
               </v-card-text>
@@ -117,7 +117,7 @@
               <v-card-text>
                 <div class="text-right">
               <v-avatar rounded="0"  size="x-large" class="ms-5 mt" >
-                <img src="../assets/ImagenesHome/charlando.png" style="width: 100%; "/>
+                <img src="../assets/ImagenesHome/interview.png" style="width: 100%; "/>
               </v-avatar> 
             </div>
               </v-card-text>
@@ -176,6 +176,7 @@
                 Nunca habia experimentado un aprendizaje tan flexible y efectivo.
                 Los cursos en linea me permitiweon continuar con mi educacion mientras mantenia mi trabajo a tiempo completo.
                 Gracias a esta plataforma ahora me siento más confiada y preparada para alcanzar mis metas profesionales
+                
               <v-divider class="mt-2 mb-2"></v-divider>
               <v-avatar color="blue"> </v-avatar>
               Ana López
@@ -200,7 +201,7 @@
               <v-card-title class="titulo mt-4">"</v-card-title>
               <v-card-text>
                 ¡Estoy enganchada a esta plataforma! Cada curso es como un libro que no puedo dejar de leer. Me ha 
-                inspirado a explorar campos que nunca antes habia considerado. Es  un lugar donde el aprendizaje se convierte en una adicción saludable
+                inspirado a explorar campos que nunca antes habia considerado. Es  un lugar donde el aprendizaje se convierte en una adicción saludable.
                 <v-divider class="mt-2 mb-2"></v-divider>
                 <v-avatar color="blue"> </v-avatar>
                   Isabel Lagunez
