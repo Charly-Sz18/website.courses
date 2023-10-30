@@ -21,6 +21,7 @@ const myCustomLightTheme = {
     info: '#2F80ED',
     success: '#4CAF50',
     warning: '#FB8C00',
+    
   },
 }
 
