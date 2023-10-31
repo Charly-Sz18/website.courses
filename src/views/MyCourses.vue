@@ -1,13 +1,16 @@
 <template>
+  <HeaderUser> </HeaderUser>
   <CourseCard>
   </CourseCard>
 </template>
 
 <script>
 import CourseCard from '@/components/CourseCard.vue';
+import HeaderUser from '@/components/HeaderUser.vue';
 export default {
   components: {
-    CourseCard
+    CourseCard, 
+    HeaderUser
   }
 }
 </script>
