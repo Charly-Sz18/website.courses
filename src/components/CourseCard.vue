@@ -8,14 +8,14 @@
       <v-card-text>
         <v-row>
           <v-col>
-            <v-chip class="ma-2 chip rounded" color="red" variant="elevated" style="height:20px;">
-              Web
+            <v-chip class="ma-2 chip rounded" :color="courses.category" variant="elevated" style="height:20px;">
+              {{ courses.category }}
             </v-chip>
           </v-col>
           <v-col>
             <div class="text-right">
               <v-btn @click="toggleLike" elevation="0" size="large">
-                <v-icon :color="liked ? 'red' : 'grey'">{{ liked ? 'mdi-heart' : 'mdi-heart-outline' }}</v-icon>
+                <v-icon :color="courses.favorite ? 'red' : 'grey'">{{ courses.favorite ? 'mdi-heart' : 'mdi-heart-outline' }}  </v-icon>
               </v-btn>
             </div>
           </v-col>
@@ -26,17 +26,17 @@
               <v-divider vertical class="blue-divider"></v-divider>
               <v-col>
                 <p>
-                  React básicos
+                  {{ courses.tittle }}
                 </p>
               </v-col>
             </v-row>
           </v-container>
         </div>
-        <p class="ml-2"> Descripcion del curso</p>
+        <p class="ml-2"> {{ courses.description }}</p>
         <br>
         <div class="text-right">
           <v-btn class="text-none text-subtitle-1 ma-2 chip rounded" color="#F2994A" size="small" variant="elevated">
-            Continuar
+            {{ courses.status }}
           </v-btn>
         </div>
       </v-card-text>
@@ -46,6 +46,10 @@
 
 <script>
 export default {
+  props:{
+    courses: Array,
+    required: true, 
+  },
   data() {
     return {
       liked: false,
@@ -55,6 +59,7 @@ export default {
     toggleLike() {
       this.liked = !this.liked;
     },
+
   },
 };
 </script>

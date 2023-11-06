@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-app-bar color="#14385C" flat>
-      <v-container fluid class="d-flex justify-between align-center" style="width: 95%;">
+      <v-container fluid class="d-flex  justify-between align-center" style="width: 95%;">
         <div class="d-flex align-center">
           <v-avatar size="50" class="me-3">
             <img src="../assets/Logo/Logo.png" style="width: 100%;" />
@@ -12,15 +12,16 @@
         </div>
         <div class="ml-7 mt-2">
           <v-select v-model="select" :items="items" item-title="state" item-value="abbr" label="Categorias"
-            persistent-hint return-object single-line variant="underlined" density="comfortable">
+            persistent-hint return-object single-line variant="outlined" style="border: 0px solid;" density="comfortable">
           </v-select>
         </div>
+        <v-text-field :loading="loading" density="compact" variant="solo" append-inner-icon="mdi-magnify"
+                label="Buscar cursos" single-line hide-details @click:append-inner="onClick" class="chip" width="50%"></v-text-field>
 
         <div class="d-flex justify-end bg-surface-variant" >
           <v-card class="estilo " width="300px">
             <v-card-text>
-              <v-text-field :loading="loading" density="compact" variant="solo" append-inner-icon="mdi-magnify"
-                label="Buscar cursos" single-line hide-details @click:append-inner="onClick" class="chip"></v-text-field>
+              
             </v-card-text>
           </v-card>
         </div>
