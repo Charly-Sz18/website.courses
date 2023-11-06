@@ -57,168 +57,147 @@
     </v-row>
   </v-container>
   <v-container fluid>
-    <v-row no-gutters>
-      <v-col class="v-col-lg-12  d-flex flex-column align-center">
-        <h2 class=" text-center mt-7">
-          Toma el control de tu carrera
-        </h2>
-        <br>
-        <p class=" text-center mt-4 mb-5">
-          Domine las necesidades que necesita para conseguir el trabajo que desea y sobresalga cuando lo consiga
+    <v-row>
+      <v-col class="text-center mt-7">
+        <h2>Toma el control de tu carrera</h2>
+        <p class="mt-4 mb-5">
+          Domina las habilidades necesarias para conseguir el trabajo que deseas y sobresale cuando lo obtengas.
         </p>
-        <div class="d-flex justify-center mt-4">
-          <!-- Tarjeta izquierda -->
-          <v-col class="mb-4 mx-7" xs12 sm6 md4>
-            <v-card class="mr-4 mb-12 elevation-4 rounded rounded-lg" width="300">
-              <v-card-title>Aprende
-                <br> a codificar
-              </v-card-title>
-              <v-card-text>
-                <div class="text-right">
-                  <v-avatar rounded="0" size="x-large" class="ms-5 mt">
-                    <img src="../assets/ImagenesHome/code.png" style="width: 100%; " />
-                  </v-avatar>
-                </div>
-              </v-card-text>
-            </v-card>
-          </v-col>
+      </v-col>
+    </v-row>
+    <v-row>
+      <!-- Tarjeta izquierda -->
+      <v-col class="mb-4 mx-4" xs12 sm6 md4>
+        <v-card class="mr-4 ml-7 mb-12 elevation-4 rounded rounded-lg" width="300">
+          <v-card-title>Aprende a codificar</v-card-title>
+          <v-card-text>
+            <v-avatar rounded="0" size="x-large" class="text-right">
+              <img src="../assets/ImagenesHome/code.png" style="width: 100%;" />
+            </v-avatar>
+          </v-card-text>
+        </v-card>
+      </v-col>
 
-          <!-- Tarjeta centrada -->
-          <v-col class="mb-4 mx-7" xs12 sm6 md4>
-            <v-card class="elevation-4 rounded rounded-lg" width="300">
-              <v-card-title>Aprende nuevas
-                <br> tecnologías </v-card-title>
-              <v-card-text>
-                <div class="text-right">
-                  <v-avatar rounded="0" size="x-large" class="ms-5 mt">
-                    <img src="../assets/ImagenesHome/learning.png" style="width: 100%; " />
-                  </v-avatar>
-                </div>
-              </v-card-text>
-            </v-card>
-          </v-col>
+      <!-- Tarjeta centrada -->
+      <v-col class="mb-4 mx-4" xs12 sm6 md4>
+        <v-card class="elevation-4 rounded rounded-lg" width="300">
+          <v-card-title>Aprende nuevas tecnologías</v-card-title>
+          <v-card-text>
+            <v-avatar rounded="0" size="x-large" class="text-right">
+              <img src="../assets/ImagenesHome/learning.png" style="width: 100%;" />
+            </v-avatar>
+          </v-card-text>
+        </v-card>
+      </v-col>
 
-          <!-- Tarjeta derecha -->
-          <v-col class=" mx-7 mb-4" xs12 sm6 md4>
-            <v-card class="elevation-4 rounded rounded-lg" width="300">
-              <v-card-title>Preparate para <br> entrevistas técnicas</v-card-title>
-              <v-card-text>
-                <div class="text-right">
-                  <v-avatar rounded="0" size="x-large" class="ms-5 mt">
-                    <img src="../assets/ImagenesHome/interview.png" style="width: 100%; " />
-                  </v-avatar>
-                </div>
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </div>
-        <br>
+      <!-- Tarjeta derecha -->
+      <v-col class="mb-4 mx-4" xs12 sm6 md4>
+        <v-card class="elevation-4 rounded rounded-lg" width="300">
+          <v-card-title>Prepárate para entrevistas técnicas</v-card-title>
+          <v-card-text>
+            <v-avatar rounded="0" size="x-large" class="text-right">
+              <img src="../assets/ImagenesHome/interview.png" style="width: 100%;" />
+            </v-avatar>
+          </v-card-text>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
-
   <v-container fluid class="seccion">
     <v-row no-gutters>
-      <v-col class="v-col-lg-12  d-flex flex-column align-center">
-        <h1 class="mt-5"> Temas populares</h1>
-        <p class="mt-5 mb-7"> Aprende con nosotros las tecnologías mas demandadas en la industria</p>
+      <v-col>
+        <h1 class="text-center mt-5">Temas populares</h1>
+        <p class="text-center mt-5 mb-7">Aprende con nosotros las tecnologías más demandadas en la industria</p>
 
-        <div class="d-flex justify-center mt-4 mb-7">
+        <div class="d-flex flex-wrap justify-center mt-4 mb-7">
           <v-avatar color="yellow" size="large" class="mr-3">
-            <img src="../assets/ImagenesHome/js.png" style="width: 50%; " />
+            <img src="../assets/ImagenesHome/js.png" style="width: 50%;" />
           </v-avatar>
           <v-avatar color="#14354C" size="large" class="mr-3">
-            <img src="../assets/ImagenesHome/piton.png" style="width: 50%; " />
+            <img src="../assets/ImagenesHome/piton.png" style="width: 50%;" />
           </v-avatar>
           <v-avatar color="#400f87" size="large" class="mr-3">
-            <img src="../assets/ImagenesHome/c.svg" style="width: 50%; " />
+            <img src="../assets/ImagenesHome/c.svg" style="width: 50%;" />
           </v-avatar>
           <v-avatar color="white" size="large" class="mr-3">
-            <img src="../assets/ImagenesHome/flutter.png" style="width: 50%; " />
-
+            <img src="../assets/ImagenesHome/flutter.png" style="width: 50%;" />
           </v-avatar>
           <v-avatar color="#1E5B85" size="large" class="mr-3">
-            <img src="../assets/ImagenesHome/vue.png" style="width: 50%; " />
+            <img src="../assets/ImagenesHome/vue.png" style="width: 50%;" />
           </v-avatar>
           <v-avatar color="black" size="large" class="mr-3">
-            <img src="../assets/ImagenesHome/React-icon.svg.png" style="width: 50%; " />
-
+            <img src="../assets/ImagenesHome/React-icon.svg.png" style="width: 50%;" />
           </v-avatar>
         </div>
       </v-col>
     </v-row>
   </v-container>
-
-  <v-container fluid>
-    <v-row no-gutters>
-      <v-col class="v-col-lg-12  d-flex flex-column align-center">
-        <h1 class=" text-center mt-7 mb-4">
-          Opiniones de nuestros <span class="estudiantes"> estudiantes </span>
-        </h1>
-        <div class="d-flex justify-center mt-4">
-          <!-- Tarjeta izquierda -->
-          <v-card class="mr-4 mb-12 elevation-4 rounded rounded-lg" width="300">
-            <v-card-title class="titulo mt-4"> "
-            </v-card-title>
+  <div>
+    <v-container fluid>
+      <v-row no-gutters>
+        <v-col>
+          <h1 class="text-center mt-7 mb-4">
+            Opiniones de nuestros <span class="estudiantes"> estudiantes </span>
+          </h1>
+        </v-col>
+      </v-row>
+      <v-row>
+        <!-- Tarjeta izquierda -->
+        <v-col xs12 sm6 md4>
+          <v-card class="ml-15 mb-12 elevation-4 rounded rounded-lg" width="300">
+            <v-card-title class="titulo mt-4"> "</v-card-title>
             <v-card-text>
-              Nunca habia experimentado un aprendizaje tan flexible y efectivo.
-              Los cursos en linea me permitiweon continuar con mi educacion mientras mantenia mi trabajo a tiempo
-              completo.
-              Gracias a esta plataforma ahora me siento más confiada y preparada para alcanzar mis metas profesionales
+              Nunca había experimentado un aprendizaje tan flexible y efectivo. Los cursos en línea me permitieron continuar con mi educación mientras mantenía mi trabajo a tiempo completo. Gracias a esta plataforma ahora me siento más confiada y preparada para alcanzar mis metas profesionales.
 
               <v-divider class="mt-2 mb-2"></v-divider>
               <v-avatar color="blue"> </v-avatar>
               Ana López
             </v-card-text>
           </v-card>
+        </v-col>
 
-          <!-- Tarjeta centrada -->
-          <v-card class="mx-15 mb-12 elevation-4 rounded rounded-lg" width="300">
+        <!-- Tarjeta centrada -->
+        <v-col xs12 sm6 md4>
+          <v-card class="mx-10 mb-12 elevation-4 rounded rounded-lg" width="300">
             <v-card-title class="titulo mt-4">" </v-card-title>
             <v-card-text>
-              Como un amante del aprendizaje constante, esta plataforma me ha dado acceso a un tesoro de conocimiento.
-              Los cursos son excelentes y los instructores son expertos en sus campos. Estoy emocionado de seguir
-              explorando nuevas áreas y expandiendo mis horizontes
+              Como amante del aprendizaje constante, esta plataforma me ha dado acceso a un tesoro de conocimiento. Los cursos son excelentes y los instructores son expertos en sus campos. Estoy emocionado de seguir explorando nuevas áreas y expandiendo mis horizontes.
+
               <v-divider class="mt-4 mb-2"></v-divider>
               <v-avatar color="blue"> </v-avatar>
               Pedro Morales
             </v-card-text>
           </v-card>
+        </v-col>
 
-          <!-- Tarjeta derecha -->
+        <!-- Tarjeta derecha -->
+        <v-col xs12 sm6 md4>
           <v-card class="ml-4 mb-12 elevation-4 rounded rounded-lg" width="300">
             <v-card-title class="titulo mt-4">"</v-card-title>
             <v-card-text>
-              ¡Estoy enganchada a esta plataforma! Cada curso es como un libro que no puedo dejar de leer. Me ha
-              inspirado a explorar campos que nunca antes habia considerado. Es un lugar donde el aprendizaje se convierte
-              en una adicción saludable.
+              ¡Estoy enganchada a esta plataforma! Cada curso es como un libro que no puedo dejar de leer. Me ha inspirado a explorar campos que nunca antes había considerado. Es un lugar donde el aprendizaje se convierte en una adicción saludable.
+
               <v-divider class="mt-2 mb-2"></v-divider>
               <v-avatar color="blue"> </v-avatar>
               Isabel Lagunez
             </v-card-text>
           </v-card>
-        </div>
-        <br>
-      </v-col>
-    </v-row>
-  </v-container>
+        </v-col>
+      </v-row>
+    </v-container>
 
-
-  <v-container fluid class="secc">
-    <v-row no-gutters>
-      <v-col class="v-col-lg-12  d-flex flex-column align-center">
-        <h1 class="mt-6"> No postergues más tu educación, ¡Tu futuro te esta esperando!</h1>
-        <p class="mt-6">Un nuevo empleo, mejor salario, mayor calidad de vida, ¡todo lo puedes conseguir con
-          <br> educación! Es el momento de lograr lo que siempre has querido.
-        </p>
-        <v-btn class="text-none  text-h6  mt-6 " color="info" variant="flat" @click="ShowDialogRegister"> ¡Comienza ya!
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-container>
-  <v-container fluid class="home-header">
-
-  </v-container>
+    <v-container fluid class="secc">
+      <v-row no-gutters>
+        <v-col class="v-col-lg-12  d-flex flex-column align-center" >
+          <h1 class="mt-6">No postergues más tu educación, ¡Tu futuro te está esperando!</h1>
+          <p class="mt-6">Un nuevo empleo, mejor salario, mayor calidad de vida, ¡todo lo puedes conseguir con educación! Es el momento de lograr lo que siempre has querido.</p>
+          <v-btn class="text-none text-h6 mt-6" color="info" variant="flat" @click="ShowDialogRegister">¡Comienza ya!</v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container fluid class="home-header">
+    </v-container>
+  </div>
 </template>
 
 <script>
