@@ -1,6 +1,6 @@
 <template>
+  <HeaderUser> </HeaderUser>
   <v-container fluid>
-
     <v-row>
       <v-col cols="8">
         <v-card>
@@ -74,8 +74,12 @@
 </template>
 
 <script>
+import HeaderUser from '@/components/HeaderUser.vue';
 
 export default {
+  components: {
+    HeaderUser
+  },
   async created() {
     const id = this.$route.params.id;
     this.id = id;
