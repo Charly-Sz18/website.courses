@@ -28,6 +28,7 @@ const myCustomLightTheme = {
     videogames: '#6FCF97',
     programming: '#56CCF2',
     uxui: '#F2994A'
+
   },
 }
 
