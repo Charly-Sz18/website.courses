@@ -19,3 +19,15 @@ export default {
   
 }
 </script>
+
+<style>
+
+.swal2-container {
+  z-index: 300000;
+}
+
+body{
+  padding-right: 0px !important;
+}
+
+</style>

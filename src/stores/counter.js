@@ -1,12 +1,32 @@
-import { ref, computed } from 'vue'
+
 import { defineStore } from 'pinia'
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
+import { auth } from '../../firebaseConfig';
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
-  }
+export const useUserStore = defineStore('userStore',{
+  state:()=>({
+    userData:null,
+  }),
+  actions:{
+    async registerUser( email, password){
+      try {
 
-  return { count, doubleCount, increment }
+        const {user} = await createUserWithEmailAndPassword(auth, email ,password);
+        
+        this.userData={email:user.email,uid:user.uid}
+      } catch (error) {
+         console.log(error.code,'register')
+         throw error; 
+      }
+    },
+    async signInUser( email, password){
+      try {
+        const {user} = await signInWithEmailAndPassword(auth, email, password);
+        this.userData={email:user.email,uid:user.uid}
+      } catch (error) {
+         console.log(error.code,'login') 
+         throw error;
+      }
+    }
+  },
 })
