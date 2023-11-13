@@ -70,6 +70,7 @@
                       <v-btn type="submit" class="text-none text-h6" 
                           color="info" 
                           variant="flat" block
+                          :loading="userStore.loadingUser"
                       >
                           Crear cuenta
                       </v-btn>
@@ -93,6 +94,7 @@ import {useUserStore} from '@/stores/counter'
 
 export default {
   data () {
+    const userStore= useUserStore();
     return {
       dialog: false,
       emailRules: [
@@ -110,7 +112,7 @@ export default {
       nombre:'',
       correo:'',
       password:'',
-
+      userStore,
     }
   },
   methods:{
@@ -124,18 +126,13 @@ export default {
             return alert('llena los campos')
           }
           
-            const userStore = useUserStore();
-
             try {
-              await userStore.registerUser(this.correo,this.password);
+              await this.userStore.registerUser(this.correo,this.password);
               
               this.$emit('RegisterNotification',{
                 icon: "success",
               })
 
-              console.log('se envio succes')
-              this.$router.push('/mycourses')
-              
               this.nombre='';
               this.correo='';
               this.password='';

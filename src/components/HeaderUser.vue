@@ -25,6 +25,36 @@
             </v-card-text>
           </v-card>
         </div>
+
+
+        <v-menu open-on-hover>
+          <template v-slot:activator="{props}">
+            <div class="h-100" >
+              <v-avatar v-bind="props" size="50" class="me-3">
+                <img src="../assets/Logo/Logo.png" style="width: 100%;" />
+               </v-avatar>
+            </div>
+            
+            
+          </template>
+
+          <v-list  >
+            <v-list-item> 
+              <v-list-item-title><strong>{{userStore.userData?.email}}</strong></v-list-item-title>
+            </v-list-item>
+      
+            <v-list-item
+            v-for="item in itemsConfig"
+            :key="item.id"
+            @click="profileMenuOption(item)"
+          >
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+          </v-list>
+
+        </v-menu>
+        
+
       </v-container>
     </v-app-bar>
   </div>
@@ -32,8 +62,11 @@
 
 
 <script>
+import {useUserStore} from '@/stores/counter'
+
 export default {
   data() {
+    const userStore= useUserStore();
     return {
       loaded: false,
       loading: false,
@@ -51,6 +84,11 @@ export default {
         { state: 'Base de datos' },
         { state: 'Video juegos' },
       ],
+      itemsConfig:[
+        {id: 1, title: 'Perfil'},
+        {id: 2, title: 'Cerrar sesión'},
+      ],
+      userStore,
     };
   },
 
@@ -63,6 +101,10 @@ export default {
         this.loaded = true
       }, 2000)
     },
+    profileMenuOption(item){
+      console.log(item.id)
+      this.$emit('menuOption',item.id)
+    }
   },
 };
 </script>
