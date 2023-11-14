@@ -9,7 +9,7 @@
     <v-window-item class="mt-3" value="1">
       <v-container fluid>
         <v-row>
-          <v-col v-for="course in courses" :key="course.id" cols="12" md="3">
+          <v-col v-for="course in courses" :key="course.id" cols="12" md="3" xs="12" sm="6">
             <CourseCard :courses="course"> </CourseCard>
           </v-col>
         </v-row>
