@@ -1,10 +1,17 @@
 <template>
   <HeaderUser> </HeaderUser>
-  <v-tabs class="mt-8 ml-8" v-model="tab" color="#14385C">
-    <v-tab value="1">Mis cursos</v-tab>
-    <v-tab value="2">Favoritos</v-tab>
-    <v-tab value="3">Completados</v-tab>
-  </v-tabs>
+
+        <v-tabs class="mt-8" v-model="tab" color="#14385C">
+          <v-tab value="1">Mis cursos</v-tab>
+          <v-tab value="2">Favoritos</v-tab>
+          <v-tab value="3">Completados</v-tab>
+        </v-tabs>
+ <router-link to="/courses/view/1"> 
+    <v-btn> 
+      Hola 
+    </v-btn>
+ </router-link>
+  
   <v-window v-model="tab">
     <v-window-item class="mt-3" value="1">
       <v-container fluid>

@@ -9,40 +9,28 @@
       </v-app-bar-title>
     </div>
     <div class="ml-7 mt-4">
-      <v-select v-model="select" :items="items" item-title="state" item-value="abbr" label="Categorias" persistent-hint
-        return-object single-line variant="outlined" style="border: 0px solid;" density="comfortable">
-      </v-select>
+      <v-select v-model="selectedOption" :items="options" @change="redirectToCategoryView"></v-select>
     </div>
     <v-spacer></v-spacer>
-
-    <v-responsive class="mx-auto mr-5" max-width="344">
+    <v-responsive class="mx-auto mr-5" max-width="250">
       <v-text-field :loading="loading" density="compact" append-inner-icon="mdi-magnify" label="Buscar cursos" single-line
-        hide-details @click:append-inner="onClick" class="chip"></v-text-field>
+        hide-details @click:append-inner="onClick" class="chip" variant="solo"></v-text-field>
     </v-responsive>
-
+    <v-col cols="auto">
+      <v-btn icon="mdi mdi-account-circle" size="x-large"></v-btn>
+    </v-col>
   </v-app-bar>
 </template>
 
 <script>
+import { useRouter } from 'vue-router';
 export default {
   data() {
     return {
       loaded: false,
       loading: false,
-      selectedOption: null, // Opción seleccionada
-      open: ['admins'],
-      options: ['Todos los cursos', 'Desarrollo web', 'Desarrollo mòvil', 'Base de datos', 'Videojuegos', 'UX/UI', 'Programaciòn'], // Lista de opciones
-      admins: [
-        '1', '2', '3', '4', '5', '6'
-      ],
-      select: { state: 'Categorias' },
-      items: [
-        { state: 'Todos los cursos' },
-        { state: 'Desarrollo web' },
-        { state: 'Desarrollo movil' },
-        { state: 'Base de datos' },
-        { state: 'Video juegos' },
-      ],
+      selectedOption: 'Todos los cursos',
+      options: ['Todos los cursos', 'Desarrollo web', 'Desarrollo móvil', 'Base de datos', 'Videojuegos', 'UX/UI', 'Programación'],
     };
   },
 
@@ -54,6 +42,20 @@ export default {
         this.loading = false
         this.loaded = true
       }, 2000)
+    },
+    redirectToCategoryView() {
+      if (this.selectedOption && this.selectedOption !== 'Todos los cursos') {
+        this.$router.push({ name: 'course-category', params: { category: this.selectedOption } });
+      } else {
+        this.$router.push({ name: 'home' });
+      }
+    },
+   
+    setup() {
+      const router = useRouter();
+    return {
+      router,
+      } 
     },
   },
 };

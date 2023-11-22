@@ -1,6 +1,6 @@
 <template >
   <v-app-bar density="prominent" color="#14385C" flat>
-    <v-container fluid class="d-flex justify-center align-center h-100" style="width: 95%; ">
+    <v-container fluid class="d-flex justify-center align-center h-100" style="width: 95%; " >
       <v-avatar size="80" class="me-3">
         <img src="../assets/Logo/Logo.png" style="width: 100%;" />
       </v-avatar>
@@ -65,21 +65,21 @@
         </p>
       </v-col>
     </v-row>
-    <v-row>
-      <!-- Tarjeta izquierda -->
-      <v-col class="mb-4 mx-4" xs12 sm6 md4>
-        <v-card class="mr-4 ml-7 mb-12 elevation-4 rounded rounded-lg" width="300">
+    <v-row >
+      <!-- Tarjeta izquierda -->  
+      <v-col class=" d-flex flex-column align-center " xs12 sm6 md4>
+        <v-card class=" elevation-4 rounded rounded-lg" width="300">
           <v-card-title>Aprende a codificar</v-card-title>
           <v-card-text>
-            <v-avatar rounded="0" size="x-large" class="text-right">
-              <img src="../assets/ImagenesHome/code.png" style="width: 100%;" />
+            <v-avatar rounded="0" size="x-large"    >
+              <img src="../assets/ImagenesHome/code.png" style="width: 100%;"  class="align-right"/>
             </v-avatar>
           </v-card-text>
         </v-card>
       </v-col>
 
       <!-- Tarjeta centrada -->
-      <v-col class="mb-4 mx-4" xs12 sm6 md4>
+      <v-col class=" d-flex flex-column align-center" xs12 sm6 md4>
         <v-card class="elevation-4 rounded rounded-lg" width="300">
           <v-card-title>Aprende nuevas tecnologías</v-card-title>
           <v-card-text>
@@ -91,7 +91,7 @@
       </v-col>
 
       <!-- Tarjeta derecha -->
-      <v-col class="mb-4 mx-4" xs12 sm6 md4>
+      <v-col class=" d-flex flex-column align-center" xs12 sm6 md4>
         <v-card class="elevation-4 rounded rounded-lg" width="300">
           <v-card-title>Prepárate para entrevistas técnicas</v-card-title>
           <v-card-text>
@@ -141,12 +141,12 @@
           </h1>
         </v-col>
       </v-row>
-      <v-row>
+      <v-row > 
         <!-- Tarjeta izquierda -->
-        <v-col xs12 sm6 md4>
-          <v-card class="ml-15 mb-12 elevation-4 rounded rounded-lg" width="300">
+        <v-col xs12 sm6 md4 class=" d-flex flex-column align-center">
+          <v-card class=" elevation-4 rounded rounded-lg" width="300">
             <v-card-title class="titulo mt-4"> "</v-card-title>
-            <v-card-text>
+            <v-card-text> 
               Nunca había experimentado un aprendizaje tan flexible y efectivo. Los cursos en línea me permitieron continuar con mi educación mientras mantenía mi trabajo a tiempo completo. Gracias a esta plataforma ahora me siento más confiada y preparada para alcanzar mis metas profesionales.
 
               <v-divider class="mt-2 mb-2"></v-divider>
@@ -157,8 +157,8 @@
         </v-col>
 
         <!-- Tarjeta centrada -->
-        <v-col xs12 sm6 md4>
-          <v-card class="mx-10 mb-12 elevation-4 rounded rounded-lg" width="300">
+        <v-col xs12 sm6 md4 class=" d-flex flex-column align-center">
+          <v-card class=" elevation-4 rounded rounded-lg" width="300">
             <v-card-title class="titulo mt-4">" </v-card-title>
             <v-card-text>
               Como amante del aprendizaje constante, esta plataforma me ha dado acceso a un tesoro de conocimiento. Los cursos son excelentes y los instructores son expertos en sus campos. Estoy emocionado de seguir explorando nuevas áreas y expandiendo mis horizontes.
@@ -171,8 +171,8 @@
         </v-col>
 
         <!-- Tarjeta derecha -->
-        <v-col xs12 sm6 md4>
-          <v-card class="ml-4 mb-12 elevation-4 rounded rounded-lg" width="300">
+        <v-col xs12 sm6 md4 class=" d-flex flex-column align-center">
+          <v-card class=" elevation-4 rounded rounded-lg" width="300">
             <v-card-title class="titulo mt-4">"</v-card-title>
             <v-card-text>
               ¡Estoy enganchada a esta plataforma! Cada curso es como un libro que no puedo dejar de leer. Me ha inspirado a explorar campos que nunca antes había considerado. Es un lugar donde el aprendizaje se convierte en una adicción saludable.
@@ -296,5 +296,8 @@ export default defineComponent({
 .titulo {
   font-size: 50px;
   color: #6BACE4
+}
+.align-right {
+  margin-left: auto;
 }
 </style>
