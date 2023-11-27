@@ -9,7 +9,7 @@
         <v-row>
           <v-col>
             <v-chip class="ma-2 chip rounded" :color="courses.category" variant="elevated" style="height:20px;">
-              {{ courses.category }}
+              {{ getCategoryFullName(courses.category) }}
             </v-chip>
           </v-col>
           <v-col>
@@ -59,7 +59,17 @@ export default {
     toggleLike() {
       this.liked = !this.liked;
     },
-
+    getCategoryFullName(abbreviation) {
+      const categoryMappings = {
+        web: 'Desarrollo web',
+        mobile: 'Desarrollo móvil',
+        bd: 'Base de datos',
+        videogames: 'Videojuegos',
+        uxui: 'UX/UI',
+        programming: 'Programación',
+      };
+      return categoryMappings[abbreviation] || abbreviation;
+    },
   },
 };
 </script>
