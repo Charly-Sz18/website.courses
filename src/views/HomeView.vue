@@ -16,10 +16,10 @@
       </v-divider>
 
       <v-btn class="text-h5 me-3 d-none d-md-flex" variant="text" @click="ShowDialogEnter"> Iniciar sesión </v-btn>
-      <Login @OpenRegister="ShowDialogRegister" ref="login" />
+      <Login @OpenRegister="ShowDialogRegister" @LoginNotification="LogInNotification" ref="login" />
       <v-btn class="text-none  text-h6 d-none d-md-flex  " color="info" variant="flat" @click="ShowDialogRegister">
         ¡Comienza ya! </v-btn>
-      <Signup @OpenLogin="ShowDialogEnter" ref="signup" />
+      <Signup @OpenLogin="ShowDialogEnter"  @RegisterNotification="RegistrationNotification" ref="signup" />
 
 
 
@@ -248,6 +248,64 @@ export default defineComponent({
         this.ShowDialogRegister()
       }
 
+    },
+    RegistrationNotification(mensaje){
+
+      console.log(mensaje)
+      if(mensaje.icon=="success"){
+          this.$swal({
+            position: "center",
+            icon: "success",
+            title: "Cuenta registrada con éxito",
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+      }
+
+      if(mensaje.icon=="errorEmail"){
+
+          this.$swal({
+            icon: "error",
+            title: "Oops...",
+            text: "El correo ya existe",
+          });
+
+      }
+      
+      if(mensaje.icon=="error"){
+          this.$swal({
+            icon: "error",
+            title: "Oops...",
+            text: "Algo salio mal, intenta nuevamente",
+          });
+
+      }
+
+    },
+    LogInNotification(mensaje){
+
+      if(mensaje.icon=="success"){
+          this.$swal({
+            position: "center",
+            icon: "success",
+            title: "Acceso correcto",
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+      }
+
+      if(mensaje.icon=="error"){
+
+          this.$swal({
+            icon: "error",
+            title: "Oops...",
+            text: "Ocurrio un error, intente nuevamente",
+          });
+
+      }
+
     }
 
   },
@@ -300,4 +358,6 @@ export default defineComponent({
 .align-right {
   margin-left: auto;
 }
+
+
 </style>
