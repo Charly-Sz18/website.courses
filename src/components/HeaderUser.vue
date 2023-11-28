@@ -8,8 +8,18 @@
         GRUPO GEEC
       </v-app-bar-title>
     </div>
-    <div class="ml-7 mt-4">
-      <v-select v-model="selectedOption" :items="options" @change="redirectToCategoryView"></v-select>
+    <div style="width: 300px;">
+      <v-select
+        v-model="select"
+        :items="items"
+        item-title="state"
+        item-value="abbr"
+        label="Categorias"
+        single-line
+        variant="outlined"
+        density="comfortable"
+        class="ml-7 mt-4"
+      ></v-select>
     </div>
     <v-spacer></v-spacer>
     <v-responsive class="mx-auto mr-5" max-width="250">
@@ -29,11 +39,27 @@ export default {
     return {
       loaded: false,
       loading: false,
-      selectedOption: 'Todos los cursos',
-      options: ['Todos los cursos', 'Desarrollo web', 'Desarrollo móvil', 'Base de datos', 'Videojuegos', 'UX/UI', 'Programación'],
+      select: null,
+      items: [
+        { abbr: 'all', state: 'Todos los cursos'},
+        { abbr: 'web', state: 'Desarrollo Web' },
+        { abbr: 'mobile', state: 'Desarrollo Móvil' },
+        { abbr: 'bd', state: 'Base de datos' },
+        { abbr: 'videogames', state: 'Videojuegos' },
+        { abbr: 'programming', state: 'Programación' },
+        { abbr: 'uxui', state: 'UX/UI' },
+      ],
     };
   },
-
+  created() {
+    console.log(this.$route.params.category);
+    this.select = this.$route.params.category;
+  },
+  watch: {
+    select(newValue) {
+      this.$router.push({ path: '/courses/category/' + newValue})      
+    },
+  },
   methods: {
     onClick() {
       this.loading = true
