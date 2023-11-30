@@ -55,7 +55,9 @@ export default {
   },
   watch: {
     select(newValue) {
-      this.$router.push({ path: '/courses/category/' + newValue})      
+      if (newValue !== undefined) {
+        this.$router.push({ path: '/courses/category/' + newValue})
+      } 
     },
   },
   methods: {
