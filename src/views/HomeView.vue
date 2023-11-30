@@ -1,27 +1,19 @@
 <template >
-  <v-app-bar density="prominent" color="#14385C" flat>
+  <v-app-bar color="#14385C" flat>
     <v-container fluid class="d-flex justify-center align-center h-100" style="width: 95%; " >
-      <v-avatar size="80" class="me-3">
+      <v-avatar size="50" class="me-3">
         <img src="../assets/Logo/Logo.png" style="width: 100%;" />
       </v-avatar>
 
       <v-app-bar-title class="d-flex align-center h-100">
         GRUPO GEEC
       </v-app-bar-title>
-      <v-card-text class="d-none d-md-flex">
-        <v-text-field density="compact" label="Search templates" append-inner-icon="mdi-magnify" single-line hide-details>
-        </v-text-field>
-      </v-card-text>
-      <v-divider v-if="!drawer" class="ms-3 me-3 border-opacity-25 d-none d-md-flex" inset vertical>
-      </v-divider>
 
-      <v-btn class="text-h5 me-3 d-none d-md-flex" variant="text" @click="ShowDialogEnter"> Iniciar sesión </v-btn>
+      <v-btn class="text-h6 me-3 d-none d-md-flex" variant="text" @click="ShowDialogEnter"> Iniciar sesión </v-btn>
       <Login @OpenRegister="ShowDialogRegister" @LoginNotification="LogInNotification" ref="login" />
       <v-btn class="text-none  text-h6 d-none d-md-flex  " color="info" variant="flat" @click="ShowDialogRegister">
         ¡Comienza ya! </v-btn>
       <Signup @OpenLogin="ShowDialogEnter"  @RegisterNotification="RegistrationNotification" ref="signup" />
-
-
 
       <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-md-none">
       </v-app-bar-nav-icon>
@@ -68,11 +60,11 @@
     <v-row >
       <!-- Tarjeta izquierda -->  
       <v-col class=" d-flex flex-column align-center " xs12 sm6 md4>
-        <v-card class=" elevation-4 rounded rounded-lg" width="300">
+        <v-card class=" elevation-4 rounded rounded-lg  d-flex flex-column align-center " width="300">
           <v-card-title>Aprende a codificar</v-card-title>
           <v-card-text>
             <v-avatar rounded="0" size="x-large"    >
-              <img src="../assets/ImagenesHome/code.png" style="width: 100%;"  class="align-right"/>
+              <img src="../assets/ImagenesHome/code.png" style="width: 100%;"/>
             </v-avatar>
           </v-card-text>
         </v-card>
@@ -80,7 +72,7 @@
 
       <!-- Tarjeta centrada -->
       <v-col class=" d-flex flex-column align-center" xs12 sm6 md4>
-        <v-card class="elevation-4 rounded rounded-lg" width="300">
+        <v-card class="elevation-4 rounded rounded-lg d-flex flex-column align-center" width="300">
           <v-card-title>Aprende nuevas tecnologías</v-card-title>
           <v-card-text>
             <v-avatar rounded="0" size="x-large" class="text-right">
@@ -92,8 +84,8 @@
 
       <!-- Tarjeta derecha -->
       <v-col class=" d-flex flex-column align-center" xs12 sm6 md4>
-        <v-card class="elevation-4 rounded rounded-lg" width="300">
-          <v-card-title>Prepárate para entrevistas técnicas</v-card-title>
+        <v-card class="elevation-4 rounded rounded-lg d-flex flex-column align-center" width="300">
+          <v-card-title>Prepárate para entrevistas <br>técnicas</v-card-title>
           <v-card-text>
             <v-avatar rounded="0" size="x-large" class="text-right">
               <img src="../assets/ImagenesHome/interview.png" style="width: 100%;" />
