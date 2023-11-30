@@ -1,13 +1,17 @@
 <template>
   <v-app-bar app color="#14385C">
-    <div class="d-flex align-center ml-5">
+    <router-link to="/mycourses"> 
+    <v-btn class="my-btn" text> 
+      <div class="d-flex align-center ml-5">
       <v-avatar size="50" class="me-3">
         <img src="../assets/Logo/Logo.png" style="width: 100%;" />
       </v-avatar>
-      <v-app-bar-title>
+      <v-app-bar-title class="my-title" >
         GRUPO GEEC
       </v-app-bar-title>
-    </div>
+    </div> 
+    </v-btn>
+ </router-link>
     <div style="width: 300px;">
       <v-select
         v-model="select"
@@ -86,3 +90,9 @@ export default {
   },
 };
 </script>
+
+<style> 
+.my-title {
+  color: white !important; /* Establecer el color del texto en blanco */
+}
+</style>

@@ -43,12 +43,12 @@
           ti.</p>
         <p class="text-center  frase-home w-75 text-white">Prepárate para una travesía de descubrimiento y logros. </p>
         <br>
-        <v-btn class="text-none  text-h6  " color="info" variant="flat" @click="ShowDialogRegister"> ¡Comienza ya!
+        <v-btn class="text-none  text-h6  mb-5" color="info" variant="flat" @click="ShowDialogRegister"> ¡Comienza ya!
         </v-btn>
       </v-col>
     </v-row>
   </v-container>
-  <v-container fluid>
+  <v-container fluid class="mb-4">
     <v-row>
       <v-col class="text-center mt-7">
         <h2>Toma el control de tu carrera</h2>
@@ -57,7 +57,7 @@
         </p>
       </v-col>
     </v-row>
-    <v-row >
+    <v-row>
       <!-- Tarjeta izquierda -->  
       <v-col class=" d-flex flex-column align-center " xs12 sm6 md4>
         <v-card class=" elevation-4 rounded rounded-lg  d-flex flex-column align-center " width="300">
@@ -85,7 +85,7 @@
       <!-- Tarjeta derecha -->
       <v-col class=" d-flex flex-column align-center" xs12 sm6 md4>
         <v-card class="elevation-4 rounded rounded-lg d-flex flex-column align-center" width="300">
-          <v-card-title>Prepárate para entrevistas <br>técnicas</v-card-title>
+          <v-card-title>Prepárate para entrevistas</v-card-title>
           <v-card-text>
             <v-avatar rounded="0" size="x-large" class="text-right">
               <img src="../assets/ImagenesHome/interview.png" style="width: 100%;" />
@@ -125,7 +125,7 @@
     </v-row>
   </v-container>
   <div>
-    <v-container fluid>
+    <v-container fluid class="mb-5">
       <v-row no-gutters>
         <v-col>
           <h1 class="text-center mt-7 mb-4">
@@ -136,13 +136,12 @@
       <v-row > 
         <!-- Tarjeta izquierda -->
         <v-col xs12 sm6 md4 class=" d-flex flex-column align-center">
-          <v-card class=" elevation-4 rounded rounded-lg" width="300">
-            <v-card-title class="titulo mt-4"> "</v-card-title>
+          <v-card class=" elevation-4 rounded rounded-lg" width="300" height="300">
+            <v-card-title class="titulo"> "</v-card-title>
             <v-card-text> 
-              Nunca había experimentado un aprendizaje tan flexible y efectivo. Los cursos en línea me permitieron continuar con mi educación mientras mantenía mi trabajo a tiempo completo. Gracias a esta plataforma ahora me siento más confiada y preparada para alcanzar mis metas profesionales.
-
+              Los cursos en línea me permitieron continuar con mi educación mientras mantenía mi trabajo a tiempo completo. Gracias a esta plataforma ahora me siento más confiada y preparada para alcanzar mis metas profesionales.
               <v-divider class="mt-2 mb-2"></v-divider>
-              <v-avatar color="blue"> </v-avatar>
+              <v-avatar color="blue"> <span class="mdi mdi-account"></span> </v-avatar>
               Ana López
             </v-card-text>
           </v-card>
@@ -150,13 +149,13 @@
 
         <!-- Tarjeta centrada -->
         <v-col xs12 sm6 md4 class=" d-flex flex-column align-center">
-          <v-card class=" elevation-4 rounded rounded-lg" width="300">
-            <v-card-title class="titulo mt-4">" </v-card-title>
+          <v-card class=" elevation-4 rounded rounded-lg" width="300" height="300">
+            <v-card-title class="titulo">" </v-card-title>
             <v-card-text>
-              Como amante del aprendizaje constante, esta plataforma me ha dado acceso a un tesoro de conocimiento. Los cursos son excelentes y los instructores son expertos en sus campos. Estoy emocionado de seguir explorando nuevas áreas y expandiendo mis horizontes.
+              Como amante del aprendizaje constante, esta plataforma me ha dado acceso a un tesoro de conocimiento. Estoy emocionado de seguir explorando nuevas áreas y expandiendo mis horizontes.
 
               <v-divider class="mt-4 mb-2"></v-divider>
-              <v-avatar color="blue"> </v-avatar>
+              <v-avatar color="blue"> <span class="mdi mdi-account"></span></v-avatar>
               Pedro Morales
             </v-card-text>
           </v-card>
@@ -164,13 +163,13 @@
 
         <!-- Tarjeta derecha -->
         <v-col xs12 sm6 md4 class=" d-flex flex-column align-center">
-          <v-card class=" elevation-4 rounded rounded-lg" width="300">
-            <v-card-title class="titulo mt-4">"</v-card-title>
+          <v-card class=" elevation-4 rounded rounded-lg" width="300" height="300">
+            <v-card-title class="titulo">"</v-card-title>
             <v-card-text>
-              ¡Estoy enganchada a esta plataforma! Cada curso es como un libro que no puedo dejar de leer. Me ha inspirado a explorar campos que nunca antes había considerado. Es un lugar donde el aprendizaje se convierte en una adicción saludable.
+              ¡Estoy enganchada a esta plataforma! Cada curso es como un libro que no puedo dejar de leer. Me ha inspirado a explorar campos que nunca antes había considerado. Es un lugar donde el aprendizaje se convierte en una adicción.
 
               <v-divider class="mt-2 mb-2"></v-divider>
-              <v-avatar color="blue"> </v-avatar>
+              <v-avatar color="blue"> <span class="mdi mdi-account"></span></v-avatar>
               Isabel Lagunez
             </v-card-text>
           </v-card>
@@ -347,9 +346,4 @@ export default defineComponent({
   font-size: 50px;
   color: #6BACE4
 }
-.align-right {
-  margin-left: auto;
-}
-
-
 </style>
