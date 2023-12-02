@@ -15,12 +15,44 @@
     </div>
     <v-spacer></v-spacer>
 
-    <v-responsive class="mx-auto mr-5" max-width="344">
-      <v-text-field :loading="loading" density="compact" append-inner-icon="mdi-magnify" label="Buscar cursos" single-line
-        hide-details @click:append-inner="onClick" class="chip"></v-text-field>
-    </v-responsive>
+        <div class="d-flex justify-end bg-surface-variant" >
+          <v-card class="estilo " width="300px">
+            <v-card-text>
+              
+            </v-card-text>
+          </v-card>
+        </div>
 
-  </v-app-bar>
+        <v-container>
+          <v-menu open-on-hover>
+            <template v-slot:activator="{props}">
+              <div class="h-100" >
+                <v-avatar v-bind="props" size="50" class="me-3">
+                  <img src="../assets/Logo/Logo.png" style="width: 100%;" />
+                </v-avatar>
+              </div>
+              
+              
+            </template>
+
+            <v-list  >
+              <v-list-item> 
+                <v-list-item-title><strong>{{userStore.userData?.email}}</strong></v-list-item-title>
+              </v-list-item>
+        
+              <v-list-item
+              v-for="item in itemsConfig"
+              :key="item.id"
+              @click="profileMenuOption(item)"
+            >
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+            </v-list>
+
+          </v-menu>
+        </v-container>
+    </v-app-bar>
+  
 </template>
 
 <script>
