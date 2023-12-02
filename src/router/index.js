@@ -49,6 +49,11 @@ const router = createRouter({
       component: () => import('../views/CourseView.vue'),
       beforeEnter: requireAuth
     },
+    {
+      path: '/courses/category/:category',
+      name: 'course-category',
+      component: () => import('../views/CategoryView.vue')
+    },
   ]
 })
 

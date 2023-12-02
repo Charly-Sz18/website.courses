@@ -1,65 +1,27 @@
 <template>
-  <div>
-    <v-app-bar color="#14385C" flat>
-      <v-container fluid class="d-flex  justify-between align-center" style="width: 95%;">
-        <div class="d-flex align-center">
-          <v-avatar size="50" class="me-3">
-            <img src="../assets/Logo/Logo.png" style="width: 100%;" />
-          </v-avatar>
-          <v-app-bar-title>
-            GRUPO GEEC
-          </v-app-bar-title>
-        </div>
-        <div class="ml-7 mt-2">
-          <v-select v-model="select" :items="items" item-title="state" item-value="abbr" label="Categorias"
-            persistent-hint return-object single-line variant="outlined" style="border: 0px solid;" density="comfortable">
-          </v-select>
-        </div>
-        <v-text-field :loading="loading" density="compact" variant="solo" append-inner-icon="mdi-magnify"
-                label="Buscar cursos" single-line hide-details @click:append-inner="onClick" class="chip" width="50%"></v-text-field>
+  <v-app-bar app color="#14385C">
+    <div class="d-flex align-center ml-5">
+      <v-avatar size="50" class="me-3">
+        <img src="../assets/Logo/Logo.png" style="width: 100%;" />
+      </v-avatar>
+      <v-app-bar-title>
+        GRUPO GEEC
+      </v-app-bar-title>
+    </div>
+    <div class="ml-7 mt-4">
+      <v-select v-model="select" :items="items" item-title="state" item-value="abbr" label="Categorias" persistent-hint
+        return-object single-line variant="outlined" style="border: 0px solid;" density="comfortable">
+      </v-select>
+    </div>
+    <v-spacer></v-spacer>
 
-        <div class="d-flex justify-end bg-surface-variant" >
-          <v-card class="estilo " width="300px">
-            <v-card-text>
-              
-            </v-card-text>
-          </v-card>
-        </div>
+    <v-responsive class="mx-auto mr-5" max-width="344">
+      <v-text-field :loading="loading" density="compact" append-inner-icon="mdi-magnify" label="Buscar cursos" single-line
+        hide-details @click:append-inner="onClick" class="chip"></v-text-field>
+    </v-responsive>
 
-
-        <v-menu open-on-hover>
-          <template v-slot:activator="{props}">
-            <div class="h-100" >
-              <v-avatar v-bind="props" size="50" class="me-3">
-                <img src="../assets/Logo/Logo.png" style="width: 100%;" />
-               </v-avatar>
-            </div>
-            
-            
-          </template>
-
-          <v-list  >
-            <v-list-item> 
-              <v-list-item-title><strong>{{userStore.userData?.email}}</strong></v-list-item-title>
-            </v-list-item>
-      
-            <v-list-item
-            v-for="item in itemsConfig"
-            :key="item.id"
-            @click="profileMenuOption(item)"
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-          </v-list>
-
-        </v-menu>
-        
-
-      </v-container>
-    </v-app-bar>
-  </div>
+  </v-app-bar>
 </template>
-
 
 <script>
 import {useUserStore} from '@/stores/counter'
@@ -109,19 +71,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.no-background .v-input {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-.estilo{
-  background-color: #14385C;
-}
-.chip {
-  color: white !important;
-  border-radius: 0;
-}
-
-</style>
