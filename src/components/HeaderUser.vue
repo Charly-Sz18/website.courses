@@ -87,6 +87,7 @@ export default {
       itemsConfig:[
         {id: 1, title: 'Perfil'},
         {id: 2, title: 'Cerrar sesión'},
+        {id: 3, title: 'Panel del instructor'}
       ],
       userStore,
     };

@@ -125,6 +125,10 @@ export default {
           
         break;
       
+        case 3:
+          this.$router.push('/instructor/courses')
+          break
+          
         default:
           break;
       }

@@ -7,6 +7,7 @@ const requireAuth= async(to, from, next) =>{
   const userStore = useUserStore();
   
   const user = await  userStore.currentUser()
+
   if(user){
     next()
   }else{
@@ -25,12 +26,13 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/instructor/courses',
+      name: 'instructor',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/InstructorView.vue'),
+      beforeEnter: requireAuth
     },
     {
       path: '/mycourses',
@@ -44,7 +46,8 @@ const router = createRouter({
     {
       path: '/courses/view/:id',
       name: 'course-view',
-      component: () => import('../views/CourseView.vue')
+      component: () => import('../views/CourseView.vue'),
+      beforeEnter: requireAuth
     },
   ]
 })
