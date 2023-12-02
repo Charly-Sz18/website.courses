@@ -4,7 +4,7 @@
     <v-row>
       <v-col cols="8">
         <v-card>
-          <v-card-title class="course-title">React Básico</v-card-title>
+          <v-card-title class="course-title">{{ id }}</v-card-title>
           <v-chip variant="elevated" color="web" class="ma-4 chip rounded tag" style="height: 20px;">Web</v-chip>
           <v-card-text>
             <div class="video-container">
