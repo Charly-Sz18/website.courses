@@ -1,5 +1,5 @@
 <template>
-  <HeaderUser @menuOption="selectOptionProfile"> </HeaderUser>
+  <!-- <HeaderUser @menuOption="selectOptionProfile"> </HeaderUser> -->
   <v-tabs class="mt-8 ml-8" v-model="tab" color="#14385C">
     <v-tab value="1">Mis cursos</v-tab>
     <v-tab value="2">Favoritos</v-tab>
@@ -126,7 +126,7 @@ export default {
         break;
       
         case 3:
-          this.$router.push('/instructor/courses')
+          
           break
           
         default:

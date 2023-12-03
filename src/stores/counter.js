@@ -20,7 +20,7 @@ export const useUserStore = defineStore('userStore',{
         const {user} = await createUserWithEmailAndPassword(auth, email ,password);
         this.userData={email:user.email,uid:user.uid}
         console.log(user)
-        router.push('/mycourses')
+        router.push('/courses/category/all')
       } catch (error) {
          console.log(error.code,'register')
          throw error; 
@@ -33,7 +33,7 @@ export const useUserStore = defineStore('userStore',{
       try {
         const {user} = await signInWithEmailAndPassword(auth, email, password);
         this.userData={email:user.email,uid:user.uid}
-        router.push('/mycourses')
+        router.push('/courses/category/all')
       } catch (error) {
          console.log(error,'login') 
          throw error;

@@ -1,5 +1,8 @@
 <template>
   <v-app>
+   
+    <HeaderUser v-if="$route.name!=='home'"/>
+     
     <v-main>
       <router-view/>
     </v-main>
@@ -7,10 +10,12 @@
 </template>
 
 <script>
+import HeaderUser from '@/components/HeaderUser.vue';
 
 export default {
   name: 'App',
   components:{
+    HeaderUser,
   
   },
   data: () => ({

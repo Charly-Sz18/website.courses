@@ -1,8 +1,12 @@
 <template>
-  <HeaderUser> </HeaderUser>
+  
   <p> {{ this.category }}</p>
+  
   <v-container fluid>
     <v-row>
+      <v-col cols="12">
+        <h1 class="ms-28">Que aprender hoy</h1>
+      </v-col>
       <v-col v-for="course in filteredCourses" :key="course.id" cols="12" md="3" xs="12" sm="6">
         <CourseCard :courses="course"> </CourseCard>
       </v-col>
@@ -73,6 +77,12 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.ms-28{
+  margin-left: 28px;
+  padding: 12px;
+}
+
+</style>
 
 

@@ -1,5 +1,4 @@
 <template>
-  <HeaderUser> </HeaderUser>
   <v-container fluid>
     <v-row>
       <v-col cols="8">
