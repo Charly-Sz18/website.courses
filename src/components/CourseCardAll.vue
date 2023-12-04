@@ -8,14 +8,14 @@
       <v-card-text>
         <v-row>
           <v-col>
-            <v-chip class="ma-2 chip rounded" :color="courses.category" variant="elevated" style="height:20px;">
+            <v-chip  class="ma-2 chip rounded" :color="courses.category" variant="elevated" style="height:20px;">
               {{ getCategoryFullName(courses.category) }}
             </v-chip>
           </v-col>
           <v-col>
             <div class="text-right">
               <v-btn @click="toggleLike" elevation="0" size="large">
-                <v-icon :color="courses.favorite ? 'red' : 'grey'">{{ courses.favorite ? 'mdi-heart' : 'mdi-heart-outline' }}  </v-icon>
+                <v-icon :color="courses.favorito ? 'red' : 'grey'">{{ courses.favorito ? 'mdi-heart' : 'mdi-heart-outline' }}  </v-icon>
               </v-btn>
             </div>
           </v-col>
@@ -26,17 +26,17 @@
               <v-divider vertical class="blue-divider"></v-divider>
               <v-col>
                 <p>
-                  {{ courses.tittle }}
+                  {{ courses.title }}
                 </p>
               </v-col>
             </v-row>
           </v-container>
         </div>
-        <p class="ml-2"> {{ courses.description }}</p>
+        <p class="ml-2"> {{ courses.ShortDescription }}</p>
         <br>
         <div class="text-right">
-          <v-btn class="text-none text-subtitle-1 ma-2 chip rounded" color="#F2994A" size="small" variant="elevated">
-            {{ courses.status }}
+          <v-btn @click="redirecCourseView" class="text-none text-subtitle-1 ma-2 chip rounded" color="#F2994A" size="small" variant="elevated">
+            {{  courses.status == 0 ? 'iniciar': 'continuar'  }}
           </v-btn>
         </div>
       </v-card-text>
@@ -47,6 +47,7 @@
 <script>
 export default {
   props:{
+    index:Number,
     courses: Object,
     required: true, 
   },
@@ -58,6 +59,9 @@ export default {
   methods: {
     toggleLike() {
       this.liked = !this.liked;
+      this.courses.favorito =this.liked;
+      
+
     },
     getCategoryFullName(abbreviation) {
       const categoryMappings = {
@@ -70,6 +74,9 @@ export default {
       };
       return categoryMappings[abbreviation] || abbreviation;
     },
+    redirecCourseView(){
+      this.$router.push({path:'/courses/view/'+this.index});
+    }
   },
 };
 </script>

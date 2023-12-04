@@ -7,23 +7,27 @@
       <v-col cols="12">
         <h1 class="ms-28">Que aprender hoy</h1>
       </v-col>
-      <v-col v-for="course in filteredCourses" :key="course.id" cols="12" md="3" xs="12" sm="6">
-        <CourseCard :courses="course"> </CourseCard>
+      <v-col v-for="(course,index) in filteredCourses" :key="index"  cols="12" md="3" xs="12" sm="6">
+        <CourseCardAll :courses="course" :index="index"> </CourseCardAll>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import CourseCard from '@/components/CourseCard.vue';
+import CourseCardAll from '@/components/CourseCardAll.vue';
 import HeaderUser from '@/components/HeaderUser.vue';
+import { UseWebAPI } from '@/stores/WebAPI';
 
 export default {
+ 
   components: {
-    CourseCard,
+    CourseCardAll,
     HeaderUser
   },
   data() {
+    const WebAPI= UseWebAPI();
+    const {coursesList} = WebAPI;
     return {
       courses: [{
         id: 1,
@@ -57,7 +61,10 @@ export default {
         favorite: true,
         status: "Iniciar"
       }
-      ]
+      ],
+      WebAPI,
+      coursesList,
+      isDataLoaded:false,
     };
   },
   props: {
@@ -66,14 +73,17 @@ export default {
   computed: {
     filteredCourses() {
       if (this.category === 'all') {
-        return this.courses;
+        console.log("cosas")
+        return this.coursesList;
       }
-      return this.courses.filter(course => course.category === this.category);
+      return this.coursesList.filter(course => course.category === this.category);
     },
     created() {
       this.category = this.$route.params.category;
     }
-  }
+  },
+ 
+ 
 }
 </script>
 

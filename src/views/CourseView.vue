@@ -3,12 +3,13 @@
     <v-row>
       <v-col cols="8">
         <v-card>
-          <v-card-title class="course-title">{{ id }}</v-card-title>
+          <p></p>
+          <v-card-title class="course-title">{{coursesList[id].title}}</v-card-title>
           <v-chip variant="elevated" color="web" class="ma-4 chip rounded tag" style="height: 20px;">Web</v-chip>
           <v-card-text>
             <div class="video-container">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/TU5-RvJ5GJI" frameborder="0"
-                allowfullscreen></iframe>
+              <iframe width="560" height="315" :src="url" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </v-card-text>
         </v-card>
@@ -16,56 +17,27 @@
 
       <v-col cols="4">
         <v-expansion-panels>
-
-          <v-expansion-panel>
+          
+          <v-expansion-panel v-for="seccion in coursesList[id].secciones">
             <v-expansion-panel-title>
               <v-row no-gutters>
                 <v-col cols="12" class="d-flex justify-start">
-                  Introducción a React
+                  {{seccion.nameseccion}}
                 </v-col>
               </v-row>
             </v-expansion-panel-title>
             <v-expansion-panel-text>
-              <v-row no-gutters>
-                <p>1.1 ¿Qué es?</p>
-              </v-row>
-              <v-row no-gutters>
-                <p>1.1 ¿Qué es?</p>
-              </v-row>
-              <v-row no-gutters>
-                <p>1.1 ¿Qué es?</p>
-              </v-row>
-              <v-row no-gutters>
-                <p>1.1 ¿Qué es?</p>
-              </v-row>
+              <v-list-item
+                v-for="(leccion,i) in seccion.lecciones" 
+                :key="i"
+                @click="MenuOption(leccion.url)"
+              >
+                <v-list-item-title>{{ leccion.nameleccion }}</v-list-item-title>
+              </v-list-item>
+              
             </v-expansion-panel-text>
           </v-expansion-panel>
-        </v-expansion-panels>
-        <v-expansion-panels>
 
-          <v-expansion-panel>
-            <v-expansion-panel-title>
-              <v-row no-gutters>
-                <v-col cols="12" class="d-flex justify-start">
-                  Introducción a React
-                </v-col>
-              </v-row>
-            </v-expansion-panel-title>
-            <v-expansion-panel-text>
-              <v-row no-gutters>
-                <p>1.1 ¿Qué es?</p>
-              </v-row>
-              <v-row no-gutters>
-                <p>1.1 ¿Qué es?</p>
-              </v-row>
-              <v-row no-gutters>
-                <p>1.1 ¿Qué es?</p>
-              </v-row>
-              <v-row no-gutters>
-                <p>1.1 ¿Qué es?</p>
-              </v-row>
-            </v-expansion-panel-text>
-          </v-expansion-panel>
         </v-expansion-panels>
       </v-col>
     </v-row>
@@ -74,6 +46,7 @@
 
 <script>
 import HeaderUser from '@/components/HeaderUser.vue';
+import { UseWebAPI } from '@/stores/WebAPI';
 
 export default {
   components: {
@@ -83,8 +56,30 @@ export default {
     const id = this.$route.params.id;
     this.id = id;
   },
-  data: () => ({
-  }),
+  data(){
+    const WebAPI=UseWebAPI()
+    const {coursesList} = WebAPI;
+    return{
+      WebAPI,
+      coursesList,
+      url:'',
+    }
+  },
+  methods: {
+    datos(){
+      console.log(this.coursesList)
+    },
+    MenuOption(video){
+      console.log(video)
+      this.url= video;
+    }
+
+
+  },
+  
+  mounted() {
+    this.datos()
+  },
 };
 </script>
 
