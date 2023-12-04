@@ -1,7 +1,5 @@
 <template>
   
-  <p> {{ this.category }}</p>
-  
   <v-container fluid>
     <v-row>
       <v-col cols="12">

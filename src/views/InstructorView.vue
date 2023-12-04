@@ -188,7 +188,7 @@
 
 <script>
 import {UseWebAPI} from '@/stores/WebApi';
-import { useUserStore } from '../stores/counter'
+import { useUserStore } from '@/stores/counter'
 export default{
  data() {
   const WebAPI= UseWebAPI();
