@@ -1,6 +1,6 @@
 <template>
  
-  <v-dialog v-model="dialog"  width="470px" persistent  >
+  <v-dialog id="registro" v-model="dialog"  width="470px" persistent  >
     <v-card class="rounded-xl" >
       <v-toolbar
         dark
@@ -31,7 +31,7 @@
         Regístrate
       </v-card-title>
       <v-card-text>
-          <v-form @submit.prevent>
+          <v-form @submit.prevent = "handleSubmit">
               <v-container>
               <v-row>
                   <v-col cols="12" class="pt-0">
@@ -39,6 +39,7 @@
                       variant="solo"
                       label="Nombre Completo"
                       type="text"
+                      v-model.trim="nombre"
                       background-color="#BDBDBD"
                       required
                       ></v-text-field>
@@ -48,6 +49,7 @@
                       <v-text-field
                       variant="solo"
                       :rules="emailRules"
+                      v-model.trim="correo"
                       label="Correo electrónico"
                       required
                       ></v-text-field>
@@ -58,6 +60,7 @@
                       variant="solo"
                       label="Contraseña"
                       type="password"
+                      v-model.trim="password"
                       background-color="#BDBDBD"
                       required
                       ></v-text-field>
@@ -67,6 +70,7 @@
                       <v-btn type="submit" class="text-none text-h6" 
                           color="info" 
                           variant="flat" block
+                          :loading="userStore.loadingUser"
                       >
                           Crear cuenta
                       </v-btn>
@@ -85,8 +89,12 @@
 </template>
 
 <script>
+
+import {useUserStore} from '@/stores/counter'
+
 export default {
   data () {
+    const userStore= useUserStore();
     return {
       dialog: false,
       emailRules: [
@@ -101,12 +109,52 @@ export default {
           return 'E-mail must be valid.'
           },
       ],
+      nombre:'',
+      correo:'',
+      password:'',
+      userStore,
     }
   },
   methods:{
     goLogin(){
       this.$emit('OpenLogin')
       this.dialog=false
+    },
+    async handleSubmit(){
+         
+          if(!this.nombre  || !this.correo || this.password.length < 6){
+            return alert('llena los campos')
+          }
+          
+            try {
+              await this.userStore.registerUser(this.correo,this.password);
+              
+              this.$emit('RegisterNotification',{
+                icon: "success",
+              })
+
+              this.nombre='';
+              this.correo='';
+              this.password='';
+            } catch (error) {
+              console.log('se envio un error')
+              console.log(error.code, 'Error al registrar al usuario');
+              if(error.code == 'auth/email-already-in-use'){
+                  this.correo='';
+                  this.password='';
+                  this.$emit('RegisterNotification',{
+                    icon: "errorEmail",
+                  })
+               
+              }else{
+                  this.correo='';
+                  this.password='';
+                  this.$emit('RegisterNotification',{
+                    icon: "error",
+                  })
+              }
+              
+            }
     }
   }
  
@@ -118,5 +166,6 @@ export default {
 .v-card .v-card-title {
   line-height: inherit !important; /* O cualquier otro valor que desees */
 }
+
 
 </style>

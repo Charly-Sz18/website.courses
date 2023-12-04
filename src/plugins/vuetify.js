@@ -21,6 +21,14 @@ const myCustomLightTheme = {
     info: '#2F80ED',
     success: '#4CAF50',
     warning: '#FB8C00',
+
+    web: '#F2C94C',
+    mobile: '#EB5757',
+    bd: '#9B51E0',
+    videogames: '#6FCF97',
+    programming: '#56CCF2',
+    uxui: '#F2994A'
+
   },
 }
 

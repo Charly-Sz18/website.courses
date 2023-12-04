@@ -31,13 +31,14 @@
           Bienvenido
         </v-card-title>
         <v-card-text>
-            <v-form @submit.prevent>
+            <v-form @submit.prevent="handleSubmit" >
                 <v-container>
                 <v-row>
                     <v-col cols="12" >
                         <v-text-field
                         variant="solo"
                         :rules="emailRules"
+                        v-model.trim="correo"
                         label="Correo electrónico"
                         required
                         ></v-text-field>
@@ -47,14 +48,16 @@
                         variant="solo"
                         label="Contraseña"
                         type="password"
+                        v-model.trim="password"
                         background-color="#BDBDBD"
                         required
                         ></v-text-field>
                     </v-col>
                     <v-col cols="12">
-                        <v-btn type="submit" class="text-none text-h6" 
+                        <v-btn type="submit"  class="text-none text-h6" 
                             color="info" 
                             variant="flat" block
+                            :loading="userStore.loadingUser"
                         >
                             Iniciar sesión
                         </v-btn>
@@ -73,8 +76,13 @@
 </template>
 
 <script>
+import { useUserStore } from '../stores/counter'
+
+
+
   export default {
     data () {
+      const userStore= useUserStore();
       return {
         dialog: false,
         emailRules: [
@@ -89,13 +97,48 @@
             return 'E-mail must be valid.'
             },
         ],
+        correo:'',
+        password:'',
+        userStore,
       }
     },
     methods:{
         goRegister(){
             this.$emit('OpenRegister')
             this.dialog=false
-        }
+        },
+        async handleSubmit(){
+         
+         if(!this.correo || this.password.length < 6){
+           return alert('llena los campos')
+         }
+         
+
+           try {
+              await this.userStore.signInUser(this.correo,this.password);
+              
+              this.$emit('LoginNotification',{
+                icon: "success",
+              })              
+              this.nombre='';
+              this.correo='';
+              this.password='';
+
+           } catch (error) {
+
+              console.log(error, 'Error al acceder al usuario');
+             
+              this.correo='';
+              this.password='';
+              
+              this.$emit('LoginNotification',{
+                icon: "error",
+              })
+             
+             
+           }
+   }
+
     }
    
   }

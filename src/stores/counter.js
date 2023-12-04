@@ -1,12 +1,79 @@
-import { ref, computed } from 'vue'
+
 import { defineStore } from 'pinia'
+import {createUserWithEmailAndPassword, 
+        signInWithEmailAndPassword, 
+        signOut,
+        onAuthStateChanged} from 'firebase/auth'
+import { auth } from '../../firebaseConfig';
+import router from '../router/index'
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
-  }
+export const useUserStore = defineStore('userStore',{
+  state:()=>({
+    userData:null,
+    loadingUser:false,
+  }),
+  actions:{
+    async registerUser( email, password){
+      this.loadingUser=true;
+      try {
 
-  return { count, doubleCount, increment }
+        const {user} = await createUserWithEmailAndPassword(auth, email ,password);
+        this.userData={email:user.email,uid:user.uid}
+        console.log(user)
+        router.push('/courses/category/all')
+      } catch (error) {
+         console.log(error.code,'register')
+         throw error; 
+      }finally{
+        this.loadingUser=false;
+      }
+    },
+    async signInUser( email, password){
+      this.loadingUser=true;
+      try {
+        const {user} = await signInWithEmailAndPassword(auth, email, password);
+        this.userData={email:user.email,uid:user.uid}
+        router.push('/courses/category/all')
+      } catch (error) {
+         console.log(error,'login') 
+         throw error;
+      }finally{
+        this.loadingUser=false
+      }
+    },
+    async logOutUser(){
+      try {
+        await signOut(auth)
+        this.userData=null;
+        router.push('/')
+      } catch (error) {
+        console.log(error,'logOut')
+        throw error;
+      }
+    },
+    currentUser(){
+      
+      return new Promise((resolve,reject)=>{
+       
+        onAuthStateChanged(auth, (user) =>{
+          
+          if(user){
+            this.userData={
+              email:user.email,
+              uid: user.uid,
+            }
+            
+          }else{
+            this.userData=null;
+          }
+
+          resolve(user)
+        }, (e) => reject(e))
+
+       
+      })
+       
+    },
+
+  },
 })
