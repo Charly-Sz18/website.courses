@@ -187,7 +187,7 @@
 </template>
 
 <script>
-import {UseWebAPI} from '@/stores/WebApi';
+import {UseWebAPI} from '../stores/WebAPI';
 import { useUserStore } from '@/stores/counter'
 export default{
  data() {
