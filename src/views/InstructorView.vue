@@ -52,11 +52,10 @@
                  <h2>¿Qué categoría se corresponde mejor con la de los conocimientos que quieres compartir?</h2> 
                  <div class="w-75 m-auto" >
                   <v-select
-                    v-model="courses.categories"
+                    v-model="courses.category"
                     :items="itemsCategories"
                     chips
                     label="Chips"
-                    multiple
                   ></v-select>
                  </div>  
                 </v-container>
@@ -73,7 +72,7 @@
             <v-col cols="11"  class="containerQuestion" >
               <v-card class="containerQuestion" variant="text">
                 <v-container fluid  class="h-75 text-center d-flex flex-column justify-center align-center" >
-                 <h2>Descrive de manera breve el curso</h2> 
+                 <h2>Describe de manera breve el curso</h2> 
                  <div class="w-75 m-auto" >
                     <v-text-field
                         v-model="courses.ShortDescription"
@@ -123,9 +122,7 @@
               <v-card  variant="text">
                 <v-container fluid   >
                 <p><strong>Titulo:</strong> {{ courses.title }}</p>
-                <p><strong>categorias:</strong> <template v-for="category in courses.categories">
-                  {{ category }}
-                </template> </p>
+                <p><strong>categorias:</strong>{{ courses.category }}</p>
                 <p><strong>Descripcion corta:</strong> {{ courses.ShortDescription }}</p>
                 <p><strong>Descripcion General:</strong>{{ courses.descriptionGeneral }}</p>
                 <v-card>
@@ -187,7 +184,7 @@
 </template>
 
 <script>
-import {UseWebAPI} from '@/stores/WebApi';
+import {UseWebAPI} from '../stores/WebAPI';
 import { useUserStore } from '@/stores/counter'
 export default{
  data() {
@@ -196,18 +193,18 @@ export default{
   return {
     cardCreateCourse: true,
     itemQuestion:null,
-    value:[],
+    value:'',
     itemsCategories:[
-        'Desarrollo Web' ,
-        'Desarrollo Móvil',
-        'Base de datos' ,
-        'Videojuegos',
-        'Programación' ,
-        'UX/UI',
+        'web' ,
+        'mobile',
+        'bd' ,
+        'videgames',
+        'programming' ,
+        'ux/ui',
     ],
     courses: {
       title:'',
-      categories:[],
+      category:'',
       favorito: false,
       ShortDescription:'',
       status:0,

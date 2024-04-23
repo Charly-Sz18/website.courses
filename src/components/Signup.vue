@@ -34,7 +34,7 @@
           <v-form @submit.prevent = "handleSubmit">
               <v-container>
               <v-row>
-                  <v-col cols="12" class="pt-0">
+                  <!-- <v-col cols="12" class="pt-0">
                       <v-text-field
                       variant="solo"
                       label="Nombre Completo"
@@ -43,7 +43,7 @@
                       background-color="#BDBDBD"
                       required
                       ></v-text-field>
-                  </v-col>
+                  </v-col> -->
 
                   <v-col cols="12" >
                       <v-text-field
@@ -122,7 +122,7 @@ export default {
     },
     async handleSubmit(){
          
-          if(!this.nombre  || !this.correo || this.password.length < 6){
+          if( !this.correo || this.password.length < 6){
             return alert('llena los campos')
           }
           

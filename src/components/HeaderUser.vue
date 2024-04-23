@@ -33,10 +33,10 @@
     <router-link to="/courses/category/all" v-if="$route.name=='Mycourses'" class="me-4  text-decoration-none">
       <h3 class="my-title " > Cursos disponibles</h3>
     </router-link>
-    <v-responsive class="mx-auto mr-5" max-width="250">
+    <!-- <v-responsive class="mx-auto mr-5" max-width="250">
       <v-text-field :loading="loading" density="compact" append-inner-icon="mdi-magnify" label="Buscar cursos" single-line
         hide-details @click:append-inner="onClick" class="chip" variant="solo"></v-text-field>
-    </v-responsive>
+    </v-responsive> -->
 
     <v-menu open-on-hover>
       <template v-slot:activator="{props}">
