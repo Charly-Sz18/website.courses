@@ -46,7 +46,7 @@
 
 <script>
 import HeaderUser from '@/components/HeaderUser.vue';
-import { UseWebAPI } from '@/stores/WebAPI';
+import { UseWebAPI } from '../stores/WebAPI';
 
 export default {
   components: {

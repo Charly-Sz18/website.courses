@@ -59,7 +59,7 @@ export default {
   methods: {
     toggleLike() {
       this.liked = !this.liked;
-      this.courses.favorito =this.liked;
+      this.courses.favorito = this.liked;
       
 
     },

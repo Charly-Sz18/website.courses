@@ -15,7 +15,7 @@
 <script>
 import CourseCardAll from '@/components/CourseCardAll.vue';
 import HeaderUser from '@/components/HeaderUser.vue';
-import { UseWebAPI } from '@/stores/WebAPI';
+import { UseWebAPI } from '../stores/WebAPI';
 
 export default {
  
