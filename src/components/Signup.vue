@@ -34,7 +34,7 @@
           <v-form @submit.prevent = "handleSubmit">
               <v-container>
               <v-row>
-                  <v-col cols="12" class="pt-0">
+                  <!-- <v-col cols="12" class="pt-0">
                       <v-text-field
                       variant="solo"
                       label="Nombre Completo"
@@ -43,7 +43,7 @@
                       background-color="#BDBDBD"
                       required
                       ></v-text-field>
-                  </v-col>
+                  </v-col> -->
 
                   <v-col cols="12" >
                       <v-text-field
@@ -70,6 +70,7 @@
                       <v-btn type="submit" class="text-none text-h6" 
                           color="info" 
                           variant="flat" block
+                          :loading="userStore.loadingUser"
                       >
                           Crear cuenta
                       </v-btn>
@@ -93,6 +94,7 @@ import {useUserStore} from '@/stores/counter'
 
 export default {
   data () {
+    const userStore= useUserStore();
     return {
       dialog: false,
       emailRules: [
@@ -110,7 +112,7 @@ export default {
       nombre:'',
       correo:'',
       password:'',
-
+      userStore,
     }
   },
   methods:{
@@ -120,22 +122,17 @@ export default {
     },
     async handleSubmit(){
          
-          if(!this.nombre  || !this.correo || this.password.length < 6){
+          if( !this.correo || this.password.length < 6){
             return alert('llena los campos')
           }
           
-            const userStore = useUserStore();
-
             try {
-              await userStore.registerUser(this.correo,this.password);
+              await this.userStore.registerUser(this.correo,this.password);
               
               this.$emit('RegisterNotification',{
                 icon: "success",
               })
 
-              console.log('se envio succes')
-              this.$router.push('/mycourses')
-              
               this.nombre='';
               this.correo='';
               this.password='';

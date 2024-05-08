@@ -1,27 +1,19 @@
 <template >
-  <v-app-bar density="prominent" color="#14385C" flat>
-    <v-container fluid class="d-flex justify-center align-center h-100" style="width: 95%; ">
-      <v-avatar size="80" class="me-3">
+  <v-app-bar color="#14385C" flat>
+    <v-container fluid class="d-flex justify-center align-center h-100" style="width: 95%; " >
+      <v-avatar size="50" class="me-3">
         <img src="../assets/Logo/Logo.png" style="width: 100%;" />
       </v-avatar>
 
       <v-app-bar-title class="d-flex align-center h-100">
         GRUPO GEEC
       </v-app-bar-title>
-      <v-card-text class="d-none d-md-flex">
-        <v-text-field density="compact" label="Search templates" append-inner-icon="mdi-magnify" single-line hide-details>
-        </v-text-field>
-      </v-card-text>
-      <v-divider v-if="!drawer" class="ms-3 me-3 border-opacity-25 d-none d-md-flex" inset vertical>
-      </v-divider>
 
-      <v-btn class="text-h5 me-3 d-none d-md-flex" variant="text" @click="ShowDialogEnter"> Iniciar sesión </v-btn>
+      <v-btn class="text-h6 me-3 d-none d-md-flex" variant="text" @click="ShowDialogEnter"> Iniciar sesión </v-btn>
       <Login @OpenRegister="ShowDialogRegister" @LoginNotification="LogInNotification" ref="login" />
       <v-btn class="text-none  text-h6 d-none d-md-flex  " color="info" variant="flat" @click="ShowDialogRegister">
         ¡Comienza ya! </v-btn>
       <Signup @OpenLogin="ShowDialogEnter"  @RegisterNotification="RegistrationNotification" ref="signup" />
-
-
 
       <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-md-none">
       </v-app-bar-nav-icon>
@@ -51,12 +43,12 @@
           ti.</p>
         <p class="text-center  frase-home w-75 text-white">Prepárate para una travesía de descubrimiento y logros. </p>
         <br>
-        <v-btn class="text-none  text-h6  " color="info" variant="flat" @click="ShowDialogRegister"> ¡Comienza ya!
+        <v-btn class="text-none  text-h6  mb-5" color="info" variant="flat" @click="ShowDialogRegister"> ¡Comienza ya!
         </v-btn>
       </v-col>
     </v-row>
   </v-container>
-  <v-container fluid>
+  <v-container fluid class="mb-4">
     <v-row>
       <v-col class="text-center mt-7">
         <h2>Toma el control de tu carrera</h2>
@@ -66,21 +58,21 @@
       </v-col>
     </v-row>
     <v-row>
-      <!-- Tarjeta izquierda -->
-      <v-col class="mb-4 mx-4" xs12 sm6 md4>
-        <v-card class="mr-4 ml-7 mb-12 elevation-4 rounded rounded-lg" width="300">
+      <!-- Tarjeta izquierda -->  
+      <v-col class=" d-flex flex-column align-center " xs12 sm6 md4>
+        <v-card class=" elevation-4 rounded rounded-lg  d-flex flex-column align-center " width="300">
           <v-card-title>Aprende a codificar</v-card-title>
           <v-card-text>
-            <v-avatar rounded="0" size="x-large" class="text-right">
-              <img src="../assets/ImagenesHome/code.png" style="width: 100%;" />
+            <v-avatar rounded="0" size="x-large"    >
+              <img src="../assets/ImagenesHome/code.png" style="width: 100%;"/>
             </v-avatar>
           </v-card-text>
         </v-card>
       </v-col>
 
       <!-- Tarjeta centrada -->
-      <v-col class="mb-4 mx-4" xs12 sm6 md4>
-        <v-card class="elevation-4 rounded rounded-lg" width="300">
+      <v-col class=" d-flex flex-column align-center" xs12 sm6 md4>
+        <v-card class="elevation-4 rounded rounded-lg d-flex flex-column align-center" width="300">
           <v-card-title>Aprende nuevas tecnologías</v-card-title>
           <v-card-text>
             <v-avatar rounded="0" size="x-large" class="text-right">
@@ -91,9 +83,9 @@
       </v-col>
 
       <!-- Tarjeta derecha -->
-      <v-col class="mb-4 mx-4" xs12 sm6 md4>
-        <v-card class="elevation-4 rounded rounded-lg" width="300">
-          <v-card-title>Prepárate para entrevistas técnicas</v-card-title>
+      <v-col class=" d-flex flex-column align-center" xs12 sm6 md4>
+        <v-card class="elevation-4 rounded rounded-lg d-flex flex-column align-center" width="300">
+          <v-card-title>Prepárate para entrevistas</v-card-title>
           <v-card-text>
             <v-avatar rounded="0" size="x-large" class="text-right">
               <img src="../assets/ImagenesHome/interview.png" style="width: 100%;" />
@@ -133,7 +125,7 @@
     </v-row>
   </v-container>
   <div>
-    <v-container fluid>
+    <v-container fluid class="mb-5">
       <v-row no-gutters>
         <v-col>
           <h1 class="text-center mt-7 mb-4">
@@ -141,44 +133,43 @@
           </h1>
         </v-col>
       </v-row>
-      <v-row>
+      <v-row > 
         <!-- Tarjeta izquierda -->
-        <v-col xs12 sm6 md4>
-          <v-card class="ml-15 mb-12 elevation-4 rounded rounded-lg" width="300">
-            <v-card-title class="titulo mt-4"> "</v-card-title>
-            <v-card-text>
-              Nunca había experimentado un aprendizaje tan flexible y efectivo. Los cursos en línea me permitieron continuar con mi educación mientras mantenía mi trabajo a tiempo completo. Gracias a esta plataforma ahora me siento más confiada y preparada para alcanzar mis metas profesionales.
-
+        <v-col xs12 sm6 md4 class=" d-flex flex-column align-center">
+          <v-card class=" elevation-4 rounded rounded-lg" width="300" height="300">
+            <v-card-title class="titulo"> "</v-card-title>
+            <v-card-text> 
+              Los cursos en línea me permitieron continuar con mi educación mientras mantenía mi trabajo a tiempo completo. Gracias a esta plataforma ahora me siento más confiada y preparada para alcanzar mis metas profesionales.
               <v-divider class="mt-2 mb-2"></v-divider>
-              <v-avatar color="blue"> </v-avatar>
+              <v-avatar color="blue"> <span class="mdi mdi-account"></span> </v-avatar>
               Ana López
             </v-card-text>
           </v-card>
         </v-col>
 
         <!-- Tarjeta centrada -->
-        <v-col xs12 sm6 md4>
-          <v-card class="mx-10 mb-12 elevation-4 rounded rounded-lg" width="300">
-            <v-card-title class="titulo mt-4">" </v-card-title>
+        <v-col xs12 sm6 md4 class=" d-flex flex-column align-center">
+          <v-card class=" elevation-4 rounded rounded-lg" width="300" height="300">
+            <v-card-title class="titulo">" </v-card-title>
             <v-card-text>
-              Como amante del aprendizaje constante, esta plataforma me ha dado acceso a un tesoro de conocimiento. Los cursos son excelentes y los instructores son expertos en sus campos. Estoy emocionado de seguir explorando nuevas áreas y expandiendo mis horizontes.
+              Como amante del aprendizaje constante, esta plataforma me ha dado acceso a un tesoro de conocimiento. Estoy emocionado de seguir explorando nuevas áreas y expandiendo mis horizontes.
 
               <v-divider class="mt-4 mb-2"></v-divider>
-              <v-avatar color="blue"> </v-avatar>
+              <v-avatar color="blue"> <span class="mdi mdi-account"></span></v-avatar>
               Pedro Morales
             </v-card-text>
           </v-card>
         </v-col>
 
         <!-- Tarjeta derecha -->
-        <v-col xs12 sm6 md4>
-          <v-card class="ml-4 mb-12 elevation-4 rounded rounded-lg" width="300">
-            <v-card-title class="titulo mt-4">"</v-card-title>
+        <v-col xs12 sm6 md4 class=" d-flex flex-column align-center">
+          <v-card class=" elevation-4 rounded rounded-lg" width="300" height="300">
+            <v-card-title class="titulo">"</v-card-title>
             <v-card-text>
-              ¡Estoy enganchada a esta plataforma! Cada curso es como un libro que no puedo dejar de leer. Me ha inspirado a explorar campos que nunca antes había considerado. Es un lugar donde el aprendizaje se convierte en una adicción saludable.
+              ¡Estoy enganchada a esta plataforma! Cada curso es como un libro que no puedo dejar de leer. Me ha inspirado a explorar campos que nunca antes había considerado. Es un lugar donde el aprendizaje se convierte en una adicción.
 
               <v-divider class="mt-2 mb-2"></v-divider>
-              <v-avatar color="blue"> </v-avatar>
+              <v-avatar color="blue"> <span class="mdi mdi-account"></span></v-avatar>
               Isabel Lagunez
             </v-card-text>
           </v-card>
@@ -355,6 +346,4 @@ export default defineComponent({
   font-size: 50px;
   color: #6BACE4
 }
-
-
 </style>
