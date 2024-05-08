@@ -57,6 +57,7 @@
                         <v-btn type="submit"  class="text-none text-h6" 
                             color="info" 
                             variant="flat" block
+                            :loading="userStore.loadingUser"
                         >
                             Iniciar sesión
                         </v-btn>
@@ -81,6 +82,7 @@ import { useUserStore } from '../stores/counter'
 
   export default {
     data () {
+      const userStore= useUserStore();
       return {
         dialog: false,
         emailRules: [
@@ -97,6 +99,7 @@ import { useUserStore } from '../stores/counter'
         ],
         correo:'',
         password:'',
+        userStore,
       }
     },
     methods:{
@@ -110,24 +113,20 @@ import { useUserStore } from '../stores/counter'
            return alert('llena los campos')
          }
          
-           const userStore = useUserStore();
 
            try {
-              await userStore.signInUser(this.correo,this.password);
+              await this.userStore.signInUser(this.correo,this.password);
               
               this.$emit('LoginNotification',{
                 icon: "success",
-              })
-
-              this.$router.push('/mycourses')
-              
+              })              
               this.nombre='';
               this.correo='';
               this.password='';
 
            } catch (error) {
 
-              console.log(error.code, 'Error al acceder al usuario');
+              console.log(error, 'Error al acceder al usuario');
              
               this.correo='';
               this.password='';

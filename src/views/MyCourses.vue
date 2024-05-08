@@ -1,17 +1,10 @@
 <template>
-  <HeaderUser> </HeaderUser>
-
-        <v-tabs class="mt-8" v-model="tab" color="#14385C">
-          <v-tab value="1">Mis cursos</v-tab>
-          <v-tab value="2">Favoritos</v-tab>
-          <v-tab value="3">Completados</v-tab>
-        </v-tabs>
- <router-link to="/courses/view/1"> 
-    <v-btn> 
-      Hola 
-    </v-btn>
- </router-link>
-  
+  <!-- <HeaderUser @menuOption="selectOptionProfile"> </HeaderUser> -->
+  <v-tabs class="mt-8 ml-8" v-model="tab" color="#14385C">
+    <v-tab value="1">Mis cursos</v-tab>
+    <v-tab value="2">Favoritos</v-tab>
+    <v-tab value="3">Completados</v-tab>
+  </v-tabs>
   <v-window v-model="tab">
     <v-window-item class="mt-3" value="1">
       <v-container fluid>
@@ -46,12 +39,16 @@
 <script>
 import CourseCard from '@/components/CourseCard.vue';
 import HeaderUser from '@/components/HeaderUser.vue';
+import { useUserStore } from '../stores/counter';
+
+
 export default {
   components: {
     CourseCard,
     HeaderUser
   },
   data() {
+    const userStore= useUserStore();
     return {
       tab: null,
       courses: [{
@@ -86,7 +83,8 @@ export default {
         favorite: true,
         status: "Iniciar"
       }
-      ]
+      ],
+      userStore,
     };
   },
   computed: {
@@ -100,7 +98,45 @@ export default {
   methods: {
     favorite() {
 
-    }
+    },
+    selectOptionProfile(id){
+
+      switch (id) {
+        case 1:
+          console.log("configurar Perfil")
+        break;
+
+        case 2:
+       this.$swal({
+                title: "Cerrar sesión",
+                text: "Esta seguro que desea abandonar la sesión",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, cerrar"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                 this.userStore.logOutUser();
+                }
+              });
+
+         
+          
+        break;
+      
+        case 3:
+          
+          break
+          
+        default:
+          break;
+      }
+     
+    },
+    
+
+
   }
 }
 
