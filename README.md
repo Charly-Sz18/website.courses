@@ -1,29 +1,17 @@
-# courses.shop.web.site
+# Plataforma de cursos
 
-This template should help get you started developing with Vue 3 in Vite and vuetity3
+## 📄 **Tabla de contenidos** 
 
-## Recommended IDE Setup
+- [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
+- [Vistas del proyecto](#vistas-del-proyecto)
+- [Integrantes del equipo](#integrantes-del-equipo)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## **Diagrama de casos de uso**
+![Imagen](./public/images/DiagramaCasosDeUso.png "Diagrama de casos de uso")
+## **Vistas del proyecto**
+El diseño de las vistas se encuentran [aquí](https://www.figma.com/design/oHhb8kshefPxBi7MTPIRpo/Plataforma-de-cursos?node-id=71%3A1352&t=ApY1BeBAcXTX7Tzi-1).
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## **Integrantes del equipo**
+- 👩‍💻[Lourdes Gabriela Batún Cemé](https://github.com/Gabriela-Batun-Ceme)
+- 👨‍💻[Erik Alejandro Poot Sánchez](https://github.com/erikpsanchez)
+- 👨‍💻[Carlos Fernando Sánchez Chuc](https://github.com/Charly-Sz18)
