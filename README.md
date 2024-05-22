@@ -2,7 +2,7 @@
 
 ## 📄 **Tabla de contenidos** 
 - [Introducción](#introduccion)
-- [Objetivo del proyecto](#objetivo-del-protecto)
+- [Objetivo del proyecto](#objetivo-del-proyecto)
 - [Descripción del proyecto](#descripcion-del-proyecto)
 - [Requerimientos funcionales](#requerimientos-funcionales)
 - [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
