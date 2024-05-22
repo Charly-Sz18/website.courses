@@ -1,12 +1,21 @@
 # Plataforma de cursos
 
 ## 📄 **Tabla de contenidos** 
+- [Introducción](#introduccion)
+- [Objetivo del proyecto](#objetivo-del-protecto)
 - [Descripción del proyecto](#descripcion-del-proyecto)
 - [Requerimientos funcionales](#requerimientos-funcionales)
 - [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
 - [Diagrama de despliegue](#diagrama-de-despliegue)
 - [Vistas del proyecto](#vistas-del-proyecto)
+- [Conclusiones](#conclusiones)
 - [Integrantes del equipo](#integrantes-del-equipo)
+
+## **Introducción**
+Este proyecto, como parte de la asignatura de Sistemas Distribuidos, se centró en la creación de una plataforma de cursos en línea. Mediante una arquitectura cliente-servidor y el uso de servicios web REST, se diseñó y desarrolló un sistema que permite a los usuarios registrarse, iniciar sesión, explorar y gestionar cursos de manera eficiente. Además, se implementaron funcionalidades para que los administradores puedan gestionar los contenidos de la plataforma.
+
+## **Objetivo del proyecto**
+El objetivo principal fue implementar una plataforma de aprendizaje en línea funcional y eficiente. A través de una arquitectura distribuida y servicios web REST, buscamos ofrecer una experiencia fluida tanto para estudiantes como administradores. Además, nos propusimos cumplir con los requisitos funcionales establecidos, garantizando la facilidad de uso del sistema tanto para usuarios como para administradores.
 
 ## **Descripción del proyecto**
 Este proyecto se centra en el desarrollo de un sitio web de cursos, ofreciendo a los usuarios una plataforma interactiva para acceder a una amplia gama de recursos educativos. Los usuarios pueden registrarse fácilmente, explorar cursos por categoría, marcar cursos como favoritos y hacer un seguimiento de su progreso. Además, los administradores cuentan con herramientas para gestionar y administrar los cursos, desde la creación y edición hasta la publicación y eliminación, proporcionando una experiencia completa tanto para los estudiantes como para los encargados de la plataforma.
@@ -56,6 +65,15 @@ El administrador debe poder eliminar un curso junto a toda su información.
 
 ## **Vistas del proyecto**
 El diseño de las vistas se encuentran [aquí](https://www.figma.com/design/oHhb8kshefPxBi7MTPIRpo/Plataforma-de-cursos?node-id=71%3A1352&t=ApY1BeBAcXTX7Tzi-1).
+
+## **Ejemplos del funcionamiento**
+- [Usuario](https://youtu.be/qr89ZFIuNkU)
+- [Administrador](https://youtu.be/OPodlMqLglc)
+
+## **Conclusiones**
+Este proyecto representa el resultado de un esfuerzo conjunto para desarrollar una plataforma de aprendizaje en línea funcional. Utilizando una arquitectura cliente-servidor y servicios web REST, logramos implementar un sistema que cumple con los requerimientos establecidos.
+
+Durante el desarrollo, enfrentamos desafíos técnicos que superamos mediante la planificación y la colaboración en equipo. Esta experiencia destacó la importancia de abordar de manera efectiva los obstáculos para garantizar el éxito del proyecto.
 
 ## **Integrantes del equipo**
 - 👩‍💻[Lourdes Gabriela Batún Cemé](https://github.com/Gabriela-Batun-Ceme)
