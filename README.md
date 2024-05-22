@@ -8,6 +8,7 @@
 - [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
 - [Diagrama de despliegue](#diagrama-de-despliegue)
 - [Vistas del proyecto](#vistas-del-proyecto)
+- [Ejemplos del funcionamiento](#ejemplos-del-funcionamiento)
 - [Conclusiones](#conclusiones)
 - [Integrantes del equipo](#integrantes-del-equipo)
 
