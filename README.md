@@ -1,9 +1,9 @@
 # Plataforma de cursos
 
 ## 📄 **Tabla de contenidos** 
-- [Introducción](#introduccion)
+- [Introducción](#introducción)
 - [Objetivo del proyecto](#objetivo-del-proyecto)
-- [Descripción del proyecto](#descripcion-del-proyecto)
+- [Descripción del proyecto](#descripción-del-proyecto)
 - [Requerimientos funcionales](#requerimientos-funcionales)
 - [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
 - [Diagrama de despliegue](#diagrama-de-despliegue)
